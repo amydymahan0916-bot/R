@@ -2,7 +2,6 @@
 <html lang="fa" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -22,106 +21,102 @@ html{
 
 body{
     font-family:Tahoma,Arial,sans-serif;
-    background:#0d0d0d;
-    color:#fff;
-    overflow-x:hidden;
+    background:#f3f3f1;
+    color:#202322;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 
 header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-
-    height:72px;
-
-    padding:0 5%;
+    height:70px;
+    padding:0 6%;
 
     display:flex;
     align-items:center;
     justify-content:space-between;
 
-    background:rgba(12,12,12,.88);
-    backdrop-filter:blur(18px);
+    position:sticky;
+    top:0;
+    z-index:100;
 
-    border-bottom:1px solid rgba(255,255,255,.08);
+    background:rgba(250,250,248,.94);
+    backdrop-filter:blur(16px);
+
+    border-bottom:1px solid #dedfdb;
 }
 
 .logo{
-    font-size:23px;
-    font-weight:bold;
+    font-size:22px;
+    font-weight:900;
 }
 
 .logo span{
-    color:#cda461;
+    color:#68716c;
 }
+
+/* BACK BUTTON */
 
 .back{
     text-decoration:none;
-    color:#ddd;
 
-    border:1px solid rgba(255,255,255,.12);
+    color:#4e5551;
+
+    background:#fff;
+
+    border:1px solid #d5d8d5;
 
     padding:9px 16px;
 
-    border-radius:25px;
-
-    font-size:12px;
-
-    transition:.3s;
-}
-
-.back:hover{
-    color:#d5aa62;
-    border-color:#cda461;
-}
-
-/* ================= HERO TITLE ================= */
-
-.page-head{
-    text-align:center;
-
-    padding:70px 20px 45px;
-
-    position:relative;
-
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(205,164,97,.14),
-            transparent 45%
-        );
-}
-
-.small-title{
-    color:#cda461;
+    border-radius:10px;
 
     font-size:11px;
 
-    letter-spacing:4px;
+    transition:.25s;
+}
+
+.back:hover{
+    background:#272c29;
+    color:#fff;
+}
+
+/* HERO */
+
+.page-head{
+    max-width:1100px;
+    margin:auto;
+
+    text-align:center;
+
+    padding:65px 20px 35px;
+}
+
+.small-title{
+    color:#737b76;
+
+    font-size:10px;
+
+    letter-spacing:3px;
 
     margin-bottom:15px;
 }
 
 .page-head h1{
-    font-size:42px;
+    font-size:40px;
 
-    margin-bottom:14px;
+    margin-bottom:13px;
 }
 
 .page-head p{
-    color:#8f8f8f;
+    color:#858985;
 
-    font-size:13px;
+    font-size:12px;
 
     line-height:2;
 }
 
-/* ================= FILTER BAR ================= */
+/* SEARCH */
 
 .tools{
-
     max-width:1100px;
 
     margin:0 auto 30px;
@@ -130,154 +125,121 @@ header{
 
     display:flex;
 
-    gap:10px;
-
-    justify-content:space-between;
-
     align-items:center;
 
-    flex-wrap:wrap;
+    gap:10px;
 }
 
 .search{
-
     flex:1;
-
-    min-width:220px;
-
-    position:relative;
 }
 
 .search input{
-
     width:100%;
 
-    padding:13px 17px;
-
-    border-radius:13px;
-
-    border:1px solid
-        rgba(255,255,255,.09);
-
-    background:#181818;
-
-    color:#fff;
-
-    outline:none;
-
-    font-family:inherit;
-
-    font-size:12px;
-
-}
-
-.search input:focus{
-
-    border-color:
-        rgba(205,164,97,.55);
-
-}
-
-.count{
-
-    color:#888;
-
-    font-size:11px;
-
-    padding:11px 15px;
-
-    background:#181818;
-
-    border:1px solid
-        rgba(255,255,255,.07);
+    height:46px;
 
     border-radius:12px;
 
+    border:1px solid #dfe1dd;
+
+    background:#fff;
+
+    outline:none;
+
+    padding:0 17px;
+
+    font-family:inherit;
+
+    font-size:11px;
+
+    color:#303432;
 }
 
-/* ================= PRODUCTS ================= */
+.search input:focus{
+    border-color:#89918c;
+}
+
+.count{
+    height:46px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 15px;
+
+    border-radius:12px;
+
+    background:#fff;
+
+    border:1px solid #dfe1dd;
+
+    color:#737975;
+
+    font-size:10px;
+}
+
+/* PRODUCTS */
 
 .container{
-
-    max-width:1200px;
+    max-width:1150px;
 
     margin:auto;
 
-    padding:0 20px 90px;
-
+    padding:0 20px 80px;
 }
 
 .products{
-
     display:grid;
 
     grid-template-columns:
         repeat(3,1fr);
 
-    gap:25px;
-
+    gap:22px;
 }
 
-/* ================= CARD ================= */
+/* CARD */
 
 .card{
+    background:#fff;
 
-    background:
-        linear-gradient(
-            145deg,
-            #1b1b1b,
-            #121212
-        );
+    border:1px solid #e1e2df;
 
-    border:1px solid
-        rgba(255,255,255,.07);
-
-    border-radius:22px;
+    border-radius:18px;
 
     overflow:hidden;
 
-    position:relative;
+    transition:.3s;
 
-    transition:
-        transform .35s,
-        border-color .35s,
-        box-shadow .35s;
-
-    animation:
-        cardIn .7s ease both;
+    animation:show .6s ease both;
 }
 
 .card:hover{
-
-    transform:translateY(-8px);
-
-    border-color:
-        rgba(205,164,97,.48);
+    transform:translateY(-6px);
 
     box-shadow:
-        0 25px 55px
-        rgba(0,0,0,.5);
+        0 18px 45px
+        rgba(30,35,32,.10);
 
+    border-color:#c8ccc8;
 }
 
-/* ================= IMAGE ================= */
+/* IMAGE */
 
 .image-link{
-
     display:block;
 
     position:relative;
 
-    overflow:hidden;
-
     height:330px;
 
-    background:#202020;
+    overflow:hidden;
 
+    background:#dededb;
 }
 
 .image-link img{
-
     width:100%;
     height:100%;
 
@@ -285,100 +247,62 @@ header{
 
     object-fit:cover;
 
-    transition:
-        transform .6s ease,
-        filter .4s ease;
-
+    transition:.5s;
 }
 
 .card:hover .image-link img{
-
-    transform:scale(1.07);
-
-    filter:brightness(1.08);
-
+    transform:scale(1.045);
 }
 
-/* dark gradient */
-
-.image-link::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    right:0;
-    bottom:0;
-
-    height:90px;
-
-    background:
-        linear-gradient(
-            transparent,
-            rgba(0,0,0,.65)
-        );
-
-    pointer-events:none;
-}
-
-/* ================= BADGE ================= */
+/* BADGE */
 
 .badge{
-
     position:absolute;
 
-    top:15px;
-    right:15px;
+    top:13px;
+    right:13px;
 
-    z-index:3;
+    padding:7px 10px;
 
-    padding:7px 11px;
+    border-radius:8px;
 
-    border-radius:20px;
+    background:rgba(255,255,255,.88);
 
-    font-size:9px;
+    color:#59615c;
 
-    color:#e0b86e;
+    font-size:8px;
 
-    background:
-        rgba(0,0,0,.68);
-
-    backdrop-filter:blur(10px);
-
-    border:1px solid
-        rgba(205,164,97,.35);
-
+    backdrop-filter:blur(8px);
 }
 
-/* ================= PRODUCT NUMBER ================= */
+/* NUMBER */
 
 .number{
-
     position:absolute;
 
-    bottom:14px;
-    left:15px;
+    bottom:12px;
+    left:13px;
 
-    z-index:3;
+    color:rgba(255,255,255,.9);
 
-    color:rgba(255,255,255,.55);
+    background:rgba(30,32,31,.55);
 
-    font-size:10px;
+    padding:5px 8px;
+
+    border-radius:7px;
+
+    font-size:8px;
 
     direction:ltr;
 }
 
-/* ================= INFO ================= */
+/* INFO */
 
 .info{
-
-    padding:19px;
-
+    padding:17px;
 }
 
 .top{
-
     display:flex;
 
     justify-content:space-between;
@@ -387,129 +311,105 @@ header{
 
     gap:10px;
 
-    margin-bottom:11px;
-
+    margin-bottom:9px;
 }
 
 .name{
-
-    font-size:19px;
+    font-size:17px;
 
     font-weight:bold;
-
 }
 
 .price{
+    color:#3d4641;
 
-    color:#d4aa62;
-
-    font-size:13px;
+    font-size:11px;
 
     font-weight:bold;
 
     white-space:nowrap;
-
 }
 
 .description{
+    color:#898e8b;
 
-    color:#818181;
-
-    font-size:11px;
+    font-size:10px;
 
     line-height:2;
 
-    min-height:44px;
-
-    margin-bottom:15px;
-
+    margin-bottom:14px;
 }
 
-/* ================= BUTTON ================= */
+/* DETAILS BUTTON */
 
 .details{
-
     display:flex;
 
-    align-items:center;
-
     justify-content:center;
+    align-items:center;
 
     width:100%;
 
-    padding:12px;
+    height:40px;
 
-    border-radius:11px;
+    border-radius:9px;
 
     text-decoration:none;
 
-    color:#111;
+    background:#29302d;
 
-    font-size:11px;
+    color:#fff;
+
+    font-size:10px;
 
     font-weight:bold;
 
-    background:
-        linear-gradient(
-            135deg,
-            #e4c17d,
-            #a97732
-        );
-
-    transition:.3s;
-
+    transition:.25s;
 }
 
 .details:hover{
-
-    box-shadow:
-        0 8px 25px
-        rgba(205,164,97,.22);
-
+    background:#46504b;
 }
 
-/* ================= EMPTY ================= */
+/* EMPTY */
 
 .empty{
-
     display:none;
 
     text-align:center;
 
-    padding:60px 20px;
+    padding:70px 20px;
 
-    color:#777;
+    color:#888;
 
+    font-size:12px;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer{
-
     text-align:center;
 
     padding:35px 20px;
 
-    border-top:1px solid
-        rgba(255,255,255,.07);
+    background:#202422;
 
-    color:#666;
+    color:#8e9691;
 
-    font-size:11px;
-
+    font-size:10px;
 }
 
 footer strong{
-    color:#cda461;
+    color:#e3e6e4;
 }
 
-/* ================= ANIMATION ================= */
+/* ANIMATION */
 
-@keyframes cardIn{
+@keyframes show{
 
     from{
         opacity:0;
-        transform:translateY(25px);
+        transform:translateY(20px);
     }
 
     to{
@@ -519,253 +419,152 @@ footer strong{
 
 }
 
-/* ================= TABLET ================= */
+/* TABLET */
 
 @media(max-width:850px){
 
     .products{
-
         grid-template-columns:
             repeat(3,1fr);
 
-        gap:12px;
-
+        gap:10px;
     }
 
     .container{
-
         padding-left:10px;
         padding-right:10px;
-
     }
 
     .image-link{
-
-        height:210px;
-
+        height:220px;
     }
 
     .info{
-
-        padding:11px;
-
+        padding:10px;
     }
 
     .name{
-
-        font-size:14px;
-
+        font-size:13px;
     }
 
     .price{
-
-        font-size:10px;
-
+        font-size:9px;
     }
 
     .description{
-
-        font-size:9px;
-
-        min-height:38px;
-
-    }
-
-    .details{
-
-        font-size:9px;
-
-        padding:9px 4px;
-
+        font-size:8px;
     }
 
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media(max-width:500px){
 
     header{
-
-        height:64px;
-
-        padding:0 13px;
-
+        height:63px;
+        padding:0 12px;
     }
 
     .logo{
-
-        font-size:19px;
-
+        font-size:18px;
     }
 
     .back{
-
-        font-size:9px;
-
         padding:8px 10px;
-
+        font-size:8px;
     }
 
     .page-head{
-
-        padding:48px 15px 30px;
-
-    }
-
-    .small-title{
-
-        font-size:8px;
-
-        letter-spacing:3px;
-
+        padding:45px 15px 28px;
     }
 
     .page-head h1{
-
-        font-size:29px;
-
+        font-size:28px;
     }
 
     .page-head p{
-
         font-size:10px;
-
     }
 
     .tools{
-
         padding:0 8px;
-
-        margin-bottom:18px;
-
-    }
-
-    .search{
-
-        min-width:100%;
-
-    }
-
-    .search input{
-
-        padding:11px 13px;
-
     }
 
     .count{
-
         display:none;
-
     }
 
     .products{
-
         grid-template-columns:
             repeat(3,1fr);
 
         gap:6px;
-
     }
 
     .image-link{
-
-        height:135px;
-
+        height:140px;
     }
 
     .badge{
-
         top:5px;
         right:5px;
 
         padding:4px 5px;
 
-        font-size:6px;
-
+        font-size:5px;
     }
 
     .number{
+        bottom:5px;
+        left:5px;
 
-        bottom:6px;
-        left:6px;
+        padding:3px 5px;
 
-        font-size:7px;
-
+        font-size:6px;
     }
 
     .info{
-
         padding:7px;
-
     }
 
     .top{
-
         display:block;
-
-        margin-bottom:4px;
-
     }
 
     .name{
-
-        font-size:10px;
-
+        font-size:9px;
         margin-bottom:4px;
-
     }
 
     .price{
-
-        font-size:7px;
-
+        font-size:6.5px;
     }
 
     .description{
+        font-size:6px;
 
-        font-size:6.5px;
+        line-height:1.6;
 
-        line-height:1.7;
-
-        min-height:22px;
-
-        margin-bottom:6px;
-
+        margin:5px 0;
     }
 
     .details{
-
-        font-size:6.5px;
-
-        padding:7px 2px;
+        height:28px;
 
         border-radius:6px;
 
+        font-size:6px;
     }
 
 }
 
-/* ================= VERY SMALL ================= */
+/* VERY SMALL */
 
 @media(max-width:350px){
 
     .image-link{
-
         height:115px;
-
-    }
-
-    .name{
-
-        font-size:9px;
-
-    }
-
-    .price{
-
-        font-size:6.5px;
-
     }
 
 }
@@ -774,20 +573,14 @@ footer strong{
 
 </head>
 
-
 <body>
 
-
-<!-- ================= HEADER ================= -->
 
 <header>
 
     <div class="logo">
-
         آذین <span>سنگ</span>
-
     </div>
-
 
     <a
         href="index.html"
@@ -801,8 +594,6 @@ footer strong{
 
 
 
-<!-- ================= TITLE ================= -->
-
 <section class="page-head">
 
     <div class="small-title">
@@ -810,11 +601,11 @@ footer strong{
     </div>
 
     <h1>
-        نمونه‌کارهای آذین سنگ
+        نمونه‌کارها
     </h1>
 
     <p>
-        ۱۲ مدل روشویی سنگی دست‌ساز
+        روشویی‌های سنگی دست‌ساز آذین سنگ
         <br>
         قابل ساخت در طرح و ابعاد دلخواه
     </p>
@@ -823,8 +614,6 @@ footer strong{
 
 
 
-<!-- ================= SEARCH ================= -->
-
 <div class="tools">
 
     <div class="search">
@@ -832,13 +621,14 @@ footer strong{
         <input
             id="search"
             type="text"
-            placeholder="🔎 جستجوی نام روشویی..."
+            placeholder="جستجوی نام روشویی..."
             oninput="searchProducts()">
 
     </div>
 
-
-    <div class="count" id="count">
+    <div
+        class="count"
+        id="count">
 
         ۱۲ محصول
 
@@ -848,11 +638,11 @@ footer strong{
 
 
 
-<!-- ================= PRODUCTS ================= -->
-
 <main class="container">
 
-<div class="products" id="products">
+<div
+    class="products"
+    id="products">
 
 
 <!-- 01 -->
@@ -869,16 +659,15 @@ footer strong{
             src="arsila.jpg"
             alt="روشویی ارسیلا">
 
-        <div class="badge">
+        <span class="badge">
             دست‌ساز
-        </div>
+        </span>
 
-        <div class="number">
+        <span class="number">
             01
-        </div>
+        </span>
 
     </a>
-
 
     <div class="info">
 
@@ -911,7 +700,6 @@ footer strong{
 </div>
 
 
-
 <!-- 02 -->
 
 <div
@@ -926,16 +714,15 @@ footer strong{
             src="perslan.jpg"
             alt="روشویی پرسلان">
 
-        <div class="badge">
+        <span class="badge">
             دست‌ساز
-        </div>
+        </span>
 
-        <div class="number">
+        <span class="number">
             02
-        </div>
+        </span>
 
     </a>
-
 
     <div class="info">
 
@@ -968,7 +755,6 @@ footer strong{
 </div>
 
 
-
 <!-- 03 -->
 
 <div
@@ -983,16 +769,15 @@ footer strong{
             src="aryana.jpg"
             alt="روشویی آریانا">
 
-        <div class="badge">
+        <span class="badge">
             دست‌ساز
-        </div>
+        </span>
 
-        <div class="number">
+        <span class="number">
             03
-        </div>
+        </span>
 
     </a>
-
 
     <div class="info">
 
@@ -1025,7 +810,6 @@ footer strong{
 </div>
 
 
-
 <!-- 04 -->
 
 <div
@@ -1040,16 +824,15 @@ footer strong{
             src="romina.jpg"
             alt="روشویی رومینا">
 
-        <div class="badge">
+        <span class="badge">
             دست‌ساز
-        </div>
+        </span>
 
-        <div class="number">
+        <span class="number">
             04
-        </div>
+        </span>
 
     </a>
-
 
     <div class="info">
 
@@ -1082,7 +865,6 @@ footer strong{
 </div>
 
 
-
 <!-- 05 -->
 
 <div
@@ -1097,16 +879,15 @@ footer strong{
             src="atrin.jpg"
             alt="روشویی آترین">
 
-        <div class="badge">
+        <span class="badge">
             دست‌ساز
-        </div>
+        </span>
 
-        <div class="number">
+        <span class="number">
             05
-        </div>
+        </span>
 
     </a>
-
 
     <div class="info">
 
@@ -1139,7 +920,6 @@ footer strong{
 </div>
 
 
-
 <!-- 06 -->
 
 <div
@@ -1154,16 +934,15 @@ footer strong{
             src="maral.jpg"
             alt="روشویی مارال">
 
-        <div class="badge">
+        <span class="badge">
             دست‌ساز
-        </div>
+        </span>
 
-        <div class="number">
+        <span class="number">
             06
-        </div>
+        </span>
 
     </a>
-
 
     <div class="info">
 
@@ -1196,7 +975,6 @@ footer strong{
 </div>
 
 
-
 <!-- 07 -->
 
 <div
@@ -1211,16 +989,15 @@ footer strong{
             src="dalia.jpg"
             alt="روشویی دالیا">
 
-        <div class="badge">
+        <span class="badge">
             دست‌ساز
-        </div>
+        </span>
 
-        <div class="number">
+        <span class="number">
             07
-        </div>
+        </span>
 
     </a>
-
 
     <div class="info">
 
@@ -1253,7 +1030,6 @@ footer strong{
 </div>
 
 
-
 <!-- 08 -->
 
 <div
@@ -1268,16 +1044,15 @@ footer strong{
             src="selin.jpg"
             alt="روشویی سلین">
 
-        <div class="badge">
+        <span class="badge">
             دست‌ساز
-        </div>
+        </span>
 
-        <div class="number">
+        <span class="number">
             08
-        </div>
+        </span>
 
     </a>
-
 
     <div class="info">
 
@@ -1310,7 +1085,6 @@ footer strong{
 </div>
 
 
-
 <!-- 09 -->
 
 <div
@@ -1325,16 +1099,15 @@ footer strong{
             src="viana.jpg"
             alt="روشویی ویانا">
 
-        <div class="badge">
+        <span class="badge">
             دست‌ساز
-        </div>
+        </span>
 
-        <div class="number">
+        <span class="number">
             09
-        </div>
+        </span>
 
     </a>
-
 
     <div class="info">
 
@@ -1367,7 +1140,6 @@ footer strong{
 </div>
 
 
-
 <!-- 10 -->
 
 <div
@@ -1382,16 +1154,15 @@ footer strong{
             src="alma.jpg"
             alt="روشویی آلما">
 
-        <div class="badge">
+        <span class="badge">
             دست‌ساز
-        </div>
+        </span>
 
-        <div class="number">
+        <span class="number">
             10
-        </div>
+        </span>
 
     </a>
-
 
     <div class="info">
 
@@ -1424,7 +1195,6 @@ footer strong{
 </div>
 
 
-
 <!-- 11 -->
 
 <div
@@ -1439,16 +1209,15 @@ footer strong{
             src="karina.jpg"
             alt="روشویی کارینا">
 
-        <div class="badge">
+        <span class="badge">
             دست‌ساز
-        </div>
+        </span>
 
-        <div class="number">
+        <span class="number">
             11
-        </div>
+        </span>
 
     </a>
-
 
     <div class="info">
 
@@ -1481,7 +1250,6 @@ footer strong{
 </div>
 
 
-
 <!-- 12 -->
 
 <div
@@ -1496,16 +1264,15 @@ footer strong{
             src="nora.jpg"
             alt="روشویی نورا">
 
-        <div class="badge">
+        <span class="badge">
             دست‌ساز
-        </div>
+        </span>
 
-        <div class="number">
+        <span class="number">
             12
-        </div>
+        </span>
 
     </a>
-
 
     <div class="info">
 
@@ -1553,8 +1320,6 @@ footer strong{
 
 
 
-<!-- ================= FOOTER ================= -->
-
 <footer>
 
     <strong>
@@ -1563,15 +1328,21 @@ footer strong{
 
     <br><br>
 
-    روشویی‌های سنگی دست‌ساز | بندر ماهشهر
+    روشویی‌های سنگی دست‌ساز
+
+    <br><br>
+
+    بندر ماهشهر | خوزستان
+
+    <br><br>
+
+    09129374866
 
 </footer>
 
 
 
 <script>
-
-/* ================= SEARCH ================= */
 
 function searchProducts(){
 
@@ -1585,7 +1356,7 @@ function searchProducts(){
     const cards =
         document.querySelectorAll(".card");
 
-    let visible = 0;
+    let visible=0;
 
     cards.forEach(function(card){
 
@@ -1596,39 +1367,34 @@ function searchProducts(){
 
         if(
             name.includes(value)
-            || value === ""
+            || value===""
         ){
 
-            card.style.display = "";
+            card.style.display="";
 
             visible++;
 
         }else{
 
-            card.style.display = "none";
+            card.style.display="none";
 
         }
 
     });
 
-
-    document.getElementById(
-        "count"
-    ).textContent =
+    document.getElementById("count")
+        .textContent =
         visible + " محصول";
 
-
-    document.getElementById(
-        "empty"
-    ).style.display =
-        visible === 0
+    document.getElementById("empty")
+        .style.display =
+        visible===0
         ? "block"
         : "none";
 
 }
 
 </script>
-
 
 </body>
             </html>
