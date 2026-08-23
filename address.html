@@ -1,76 +1,499 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>آدرس | آذین سنگ</title>
 
 <style>
 
-body{
-margin:0;
-font-family:Tahoma,Arial;
-background:#f4f1eb;
-text-align:center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.box{
-max-width:700px;
-margin:80px auto;
-background:white;
-padding:40px;
-border-radius:20px;
-line-height:2.3;
+body{
+    font-family:Tahoma,Arial,sans-serif;
+    background:#0d0d0d;
+    color:#fff;
+    min-height:100vh;
+}
+
+/* HEADER */
+
+header{
+    height:72px;
+    padding:0 6%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    background:rgba(12,12,12,.9);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    font-size:23px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#cda461;
 }
 
 .back{
-display:block;
-background:#222;
-color:white;
-padding:15px;
-border-radius:10px;
-text-decoration:none;
-margin-top:25px;
+    text-decoration:none;
+    color:#ddd;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    padding:9px 16px;
+
+    border-radius:25px;
+
+    font-size:12px;
+}
+
+/* MAIN */
+
+.container{
+    max-width:900px;
+    margin:auto;
+
+    padding:65px 20px 90px;
+}
+
+/* TITLE */
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.small{
+    color:#cda461;
+
+    font-size:11px;
+
+    letter-spacing:4px;
+
+    margin-bottom:15px;
+}
+
+.title h1{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.title p{
+    color:#888;
+    font-size:13px;
+    line-height:2;
+}
+
+/* ADDRESS CARD */
+
+.address-card{
+
+    padding:30px;
+
+    border-radius:23px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1c1c1c,
+            #121212
+        );
+
+    border:1px solid
+        rgba(255,255,255,.08);
+
+    box-shadow:
+        0 25px 60px
+        rgba(0,0,0,.35);
+
+    margin-bottom:20px;
+}
+
+.icon{
+    width:65px;
+    height:65px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:18px;
+
+    background:
+        rgba(205,164,97,.1);
+
+    color:#d5aa62;
+
+    font-size:28px;
+
+    margin-bottom:20px;
+}
+
+.address-card h2{
+    font-size:21px;
+    margin-bottom:15px;
+}
+
+.address{
+    color:#aaa;
+
+    font-size:14px;
+
+    line-height:2.4;
+
+    margin-bottom:25px;
+}
+
+/* BUTTON */
+
+.map-btn{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    width:100%;
+
+    padding:16px;
+
+    border-radius:13px;
+
+    text-decoration:none;
+
+    color:#111;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e4c17d,
+            #a97732
+        );
+
+    transition:.3s;
+}
+
+.map-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(205,164,97,.2);
+
+}
+
+/* INFO GRID */
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:15px;
+
+}
+
+.info{
+
+    padding:23px;
+
+    border-radius:18px;
+
+    background:#171717;
+
+    border:1px solid
+        rgba(255,255,255,.07);
+
+}
+
+.info-title{
+
+    color:#cda461;
+
+    font-size:12px;
+
+    margin-bottom:12px;
+
+}
+
+.info-text{
+
+    color:#aaa;
+
+    font-size:12px;
+
+    line-height:2;
+
+}
+
+.phone{
+
+    color:#d5aa62;
+
+    direction:ltr;
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    margin-top:5px;
+
+}
+
+/* FOOTER */
+
+footer{
+
+    text-align:center;
+
+    padding:35px 20px;
+
+    border-top:1px solid
+        rgba(255,255,255,.07);
+
+    color:#666;
+
+    font-size:11px;
+
+}
+
+footer strong{
+    color:#cda461;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .container{
+        padding:45px 13px 70px;
+    }
+
+    .title h1{
+        font-size:30px;
+    }
+
+    .title p{
+        font-size:11px;
+    }
+
+    .address-card{
+        padding:22px;
+    }
+
+    .address{
+        font-size:12px;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
 }
 
 </style>
 
 </head>
 
+
 <body>
 
-<div class="box">
 
-<h1>📍 آدرس آذین سنگ</h1>
+<!-- HEADER -->
 
-<p>
-استان خوزستان، شهر بندر ماهشهر
-</p>
+<header>
 
-<p>
-انتهای خیابان طالقانی،
-جنب پمپ بنزین پاسارگاد
-</p>
+    <div class="logo">
 
-<hr>
+        آذین <span>سنگ</span>
 
-<p>
-🕐 ۸ صبح تا ۱۳ ظهر
-<br>
-🕐 ۱۷ تا ۲۱
-</p>
+    </div>
 
-<p>
-📞 09129374866
-</p>
 
-<a href="index.html" class="back">
-بازگشت به صفحه اصلی
-</a>
+    <a
+        href="index.html"
+        class="back">
 
-</div>
+        ← صفحه اصلی
+
+    </a>
+
+</header>
+
+
+
+<!-- MAIN -->
+
+<main class="container">
+
+
+    <div class="title">
+
+        <div class="small">
+            AZIN SANG
+        </div>
+
+        <h1>
+            آدرس آذین سنگ
+        </h1>
+
+        <p>
+            برای بازدید و سفارش حضوری
+            می‌توانید به مجموعه آذین سنگ مراجعه کنید.
+        </p>
+
+    </div>
+
+
+
+    <!-- ADDRESS -->
+
+    <div class="address-card">
+
+        <div class="icon">
+            📍
+        </div>
+
+        <h2>
+            آدرس فروشگاه
+        </h2>
+
+        <p class="address">
+
+            استان خوزستان،
+            شهر بندر ماهشهر
+
+            <br>
+
+            انتهای خیابان طالقانی،
+            جنب پمپ بنزین پاسارگاد
+
+            <br>
+
+            <strong>
+                آذین سنگ
+            </strong>
+
+        </p>
+
+
+        <!-- MAP -->
+
+        <a
+            class="map-btn"
+            href="https://www.google.com/maps/search/?api=1&query=آذین+سنگ+بندر+ماهشهر"
+            target="_blank">
+
+            📍 مسیریابی تا آذین سنگ
+
+        </a>
+
+    </div>
+
+
+
+    <!-- INFO -->
+
+    <div class="info-grid">
+
+
+        <div class="info">
+
+            <div class="info-title">
+                🕐 ساعت کاری
+            </div>
+
+            <div class="info-text">
+
+                صبح:
+                ۸:۰۰ تا ۱۳:۰۰
+
+                <br>
+
+                عصر:
+                ۱۷:۰۰ تا ۲۱:۰۰
+
+            </div>
+
+        </div>
+
+
+
+        <div class="info">
+
+            <div class="info-title">
+                📞 تماس
+            </div>
+
+            <div class="info-text">
+
+                برای هماهنگی و سفارش:
+
+                <br>
+
+                <a
+                    href="tel:09129374866"
+                    class="phone">
+
+                    09129374866
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <strong>
+        آذین سنگ
+    </strong>
+
+    <br><br>
+
+    روشویی‌های سنگی دست‌ساز
+
+    <br>
+
+    بندر ماهشهر | خوزستان
+
+</footer>
+
 
 </body>
-</html>
+
+          </html>
