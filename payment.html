@@ -2,7 +2,6 @@
 <html lang="fa" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,330 +17,334 @@
 
 body{
     font-family:Tahoma,Arial,sans-serif;
-    background:#111;
-    color:#fff;
+    background:#f2f4f6;
+    color:#20252a;
     min-height:100vh;
 }
 
 /* HEADER */
 
 header{
-    height:75px;
+    height:70px;
     padding:0 6%;
 
     display:flex;
     align-items:center;
     justify-content:space-between;
 
-    background:rgba(15,15,15,.9);
-    backdrop-filter:blur(15px);
+    background:#fff;
 
-    border-bottom:1px solid rgba(255,255,255,.08);
+    border-bottom:1px solid #e1e4e7;
 }
 
 .logo{
-    font-size:24px;
-    font-weight:bold;
+    font-size:22px;
+    font-weight:900;
 }
 
 .logo span{
-    color:#c99b54;
+    color:#596d7d;
 }
 
 .back{
-    color:#ddd;
     text-decoration:none;
 
-    padding:10px 16px;
+    color:#596169;
 
-    border:1px solid rgba(255,255,255,.15);
+    background:#f4f5f6;
 
-    border-radius:25px;
+    border:1px solid #dfe2e5;
 
-    font-size:12px;
+    padding:9px 15px;
+
+    border-radius:9px;
+
+    font-size:10px;
+
+    transition:.25s;
 }
 
-/* CONTAINER */
+.back:hover{
+    background:#26343f;
+    color:#fff;
+}
+
+/* MAIN */
 
 .container{
     max-width:650px;
+
     margin:auto;
 
-    padding:55px 20px 80px;
+    padding:45px 15px 70px;
 }
 
 /* TITLE */
 
 .title{
     text-align:center;
-    margin-bottom:35px;
+
+    margin-bottom:30px;
 }
 
-.small{
-    color:#c99b54;
-    font-size:11px;
+.title span{
+    color:#6c7780;
+
+    font-size:9px;
+
     letter-spacing:3px;
-    margin-bottom:12px;
 }
 
 .title h1{
     font-size:32px;
-    margin-bottom:10px;
+
+    margin:12px 0;
 }
 
 .title p{
-    color:#888;
-    font-size:12px;
+    color:#858b90;
+
+    font-size:11px;
+
+    line-height:2;
 }
 
-/* PRODUCT */
+/* ORDER */
 
-.product-box{
+.order{
+
+    background:#fff;
+
+    border:1px solid #e0e3e6;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    margin-bottom:15px;
 
     display:flex;
+
+    justify-content:space-between;
+
     align-items:center;
+
     gap:15px;
-
-    padding:15px;
-
-    background:#1b1b1b;
-
-    border:1px solid
-        rgba(255,255,255,.08);
-
-    border-radius:17px;
-
-    margin-bottom:20px;
 }
 
-.product-box img{
+.order-label{
+    color:#858b90;
 
-    width:85px;
-    height:85px;
+    font-size:9px;
 
-    object-fit:cover;
-
-    border-radius:12px;
+    margin-bottom:7px;
 }
 
-.product-info h2{
-    font-size:17px;
-    margin-bottom:8px;
-}
+.order-name{
+    font-size:15px;
 
-.product-info span{
-    color:#d2a65c;
     font-weight:bold;
-    font-size:14px;
+}
+
+.order-price{
+
+    color:#283b49;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    white-space:nowrap;
 }
 
 /* PAYMENT CARD */
 
 .payment-card{
 
+    background:#fff;
+
+    border:1px solid #e0e3e6;
+
+    border-radius:20px;
+
     padding:25px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #252525,
-            #151515
-        );
-
-    border-radius:22px;
-
-    border:1px solid
-        rgba(201,155,84,.25);
 
     box-shadow:
-        0 20px 60px
-        rgba(0,0,0,.35);
-
+        0 18px 45px
+        rgba(35,45,52,.07);
 }
 
-/* BANK CARD */
+.payment-title{
 
-.bank-card{
+    font-size:17px;
 
-    padding:25px;
-
-    border-radius:18px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #303030,
-            #161616
-        );
-
-    border:1px solid
-        rgba(255,255,255,.1);
-
-    margin-bottom:25px;
+    margin-bottom:20px;
 }
 
-.bank-name{
+/* BANK BOX */
 
-    display:flex;
+.bank-box{
 
-    justify-content:space-between;
+    background:#f5f7f8;
 
-    color:#aaa;
+    border:1px solid #e2e5e7;
 
-    font-size:12px;
+    border-radius:15px;
 
-    margin-bottom:25px;
+    padding:18px;
+
+    margin-bottom:12px;
+}
+
+.bank-label{
+
+    color:#8a9095;
+
+    font-size:9px;
+
+    margin-bottom:8px;
+}
+
+.bank-value{
+
+    font-size:17px;
+
+    font-weight:bold;
 }
 
 .card-number{
 
     direction:ltr;
 
-    text-align:center;
-
-    font-size:21px;
+    text-align:right;
 
     letter-spacing:2px;
 
-    margin-bottom:18px;
+    font-size:19px;
 
-    color:#fff;
-}
-
-.owner{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    color:#ccc;
-
-    font-size:12px;
+    color:#26343f;
 }
 
 /* COPY */
 
-.copy-btn{
+.copy{
 
     width:100%;
 
-    padding:13px;
+    border:0;
 
-    border:1px solid
-        rgba(201,155,84,.4);
+    padding:12px;
 
-    background:
-        rgba(201,155,84,.08);
+    border-radius:10px;
 
-    color:#d3aa67;
+    background:#e8edf1;
 
-    border-radius:11px;
-
-    cursor:pointer;
+    color:#405666;
 
     font-family:inherit;
 
-    font-size:13px;
+    font-size:10px;
 
-    margin-bottom:25px;
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.copy:hover{
+
+    background:#dce5eb;
 
 }
 
 /* WARNING */
 
-.notice{
+.warning{
 
     padding:15px;
 
-    background:
-        rgba(255,180,0,.06);
-
-    border:1px solid
-        rgba(255,180,0,.15);
-
-    border-radius:12px;
-
-    color:#aaa;
-
-    font-size:11px;
-
-    line-height:2;
-
-    margin-bottom:20px;
-
-}
-
-/* PAY BUTTON */
-
-.pay-btn{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    width:100%;
-
-    padding:16px;
-
-    border:0;
+    margin:18px 0;
 
     border-radius:13px;
 
-    text-decoration:none;
+    background:#fff8e8;
 
-    color:#111;
+    border:1px solid #f1e3bd;
 
-    font-weight:bold;
+    color:#816b35;
+
+    font-size:9px;
+
+    line-height:2;
+}
+
+/* PAID */
+
+.paid{
+
+    display:block;
+
+    width:100%;
+
+    border:0;
+
+    padding:16px;
+
+    border-radius:12px;
+
+    background:#3f6753;
+
+    color:#fff;
 
     font-family:inherit;
 
-    font-size:14px;
+    font-size:11px;
+
+    font-weight:bold;
 
     cursor:pointer;
 
-    background:
-        linear-gradient(
-            135deg,
-            #e2bf7b,
-            #a97732
-        );
-
-    transition:.3s;
-
-}
-
-.pay-btn:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-        0 10px 30px
-        rgba(201,155,84,.2);
-
-}
-
-/* PHONE */
-
-.phone{
-
     text-align:center;
-
-    margin-top:20px;
-
-    color:#777;
-
-    font-size:11px;
-
-}
-
-.phone a{
-
-    color:#c99b54;
 
     text-decoration:none;
 
+    transition:.25s;
+}
+
+.paid:hover{
+
+    background:#31513f;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(63,103,83,.18);
+
+}
+
+/* SUPPORT */
+
+.support{
+
+    display:block;
+
+    text-align:center;
+
+    margin-top:13px;
+
+    padding:13px;
+
+    border-radius:11px;
+
+    text-decoration:none;
+
+    color:#31536e;
+
+    background:#edf3f8;
+
+    border:1px solid #d9e4ed;
+
+    font-size:9px;
 }
 
 /* FOOTER */
@@ -350,16 +353,17 @@ footer{
 
     text-align:center;
 
-    padding:30px;
+    background:#20262a;
 
-    color:#666;
+    color:#858d92;
 
-    font-size:11px;
+    padding:30px 20px;
 
-    border-top:
-        1px solid
-        rgba(255,255,255,.07);
+    font-size:9px;
+}
 
+footer strong{
+    color:#e7eaec;
 }
 
 /* MOBILE */
@@ -367,16 +371,21 @@ footer{
 @media(max-width:500px){
 
     header{
-        height:65px;
-        padding:0 15px;
+        height:63px;
+        padding:0 12px;
     }
 
     .logo{
-        font-size:19px;
+        font-size:18px;
+    }
+
+    .back{
+        padding:8px 10px;
+        font-size:8px;
     }
 
     .container{
-        padding:35px 12px 60px;
+        padding:30px 10px 60px;
     }
 
     .title h1{
@@ -384,15 +393,11 @@ footer{
     }
 
     .payment-card{
-        padding:15px;
-    }
-
-    .bank-card{
-        padding:20px 12px;
+        padding:17px;
     }
 
     .card-number{
-        font-size:16px;
+        font-size:15px;
         letter-spacing:1px;
     }
 
@@ -402,25 +407,20 @@ footer{
 
 </head>
 
-
 <body>
 
-
-<!-- HEADER -->
 
 <header>
 
     <div class="logo">
-
         آذین <span>سنگ</span>
-
     </div>
 
     <a
         href="products.html"
         class="back">
 
-        ← نمونه‌کارها
+        ← بازگشت
 
     </a>
 
@@ -428,47 +428,63 @@ footer{
 
 
 
-<!-- MAIN -->
-
 <main class="container">
 
 
     <div class="title">
 
-        <div class="small">
-            AZIN SANG
-        </div>
+        <span>
+            AZIN SANG / PAYMENT
+        </span>
 
         <h1>
             پرداخت سفارش
         </h1>
 
         <p>
-            اطلاعات محصول و پرداخت را بررسی کنید.
+            مبلغ سفارش را به کارت زیر واریز کنید.
+            سپس گزینه «پرداخت کردم» را بزنید.
         </p>
 
     </div>
 
 
 
-    <!-- PRODUCT -->
+    <!-- ORDER -->
 
-    <div class="product-box">
+    <div class="order">
 
-        <img
-            id="productImage"
-            src="arsila.jpg"
-            alt="محصول">
+        <div>
 
-        <div class="product-info">
+            <div class="order-label">
+                محصول انتخاب‌شده
+            </div>
 
-            <h2 id="productName">
+            <div
+                class="order-name"
+                id="productName">
+
                 ارسیلا
-            </h2>
 
-            <span id="productPrice">
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="order-label">
+                مبلغ
+
+            </div>
+
+            <div
+                class="order-price"
+                id="productPrice">
+
                 ۱۵ میلیون تومان
-            </span>
+
+            </div>
 
         </div>
 
@@ -480,49 +496,32 @@ footer{
 
     <div class="payment-card">
 
+        <div class="payment-title">
+            اطلاعات کارت
+        </div>
 
-        <div class="bank-card">
 
-            <div class="bank-name">
+        <!-- CARD NUMBER -->
 
-                <span>
-                    بانک ملت
-                </span>
+        <div class="bank-box">
 
-                <span>
-                    آذین سنگ
-                </span>
-
+            <div class="bank-label">
+                شماره کارت
             </div>
 
-
-            <div class="card-number">
+            <div
+                class="bank-value card-number"
+                id="cardNumber">
 
                 6104 3374 5166 8311
-
-            </div>
-
-
-            <div class="owner">
-
-                <span>
-                    صاحب حساب
-                </span>
-
-                <strong>
-                    کامران امیدی
-                </strong>
 
             </div>
 
         </div>
 
 
-
-        <!-- COPY -->
-
         <button
-            class="copy-btn"
+            class="copy"
             onclick="copyCard()">
 
             📋 کپی شماره کارت
@@ -531,42 +530,71 @@ footer{
 
 
 
-        <!-- NOTICE -->
+        <!-- OWNER -->
 
-        <div class="notice">
+        <div class="bank-box" style="margin-top:12px;">
 
-            لطفاً پس از واریز وجه، روی دکمه
-            «پرداخت کردم» بزنید تا با پشتیبانی
-            تماس بگیرید و سفارش شما بررسی شود.
+            <div class="bank-label">
+                به نام
+            </div>
+
+            <div class="bank-value">
+
+                کامران امیدی
+
+            </div>
+
+        </div>
+
+
+        <!-- BANK -->
+
+        <div class="bank-box">
+
+            <div class="bank-label">
+                بانک
+            </div>
+
+            <div class="bank-value">
+
+                ملت
+
+            </div>
 
         </div>
 
 
 
-        <!-- PAY -->
+        <div class="warning">
+
+            ⚠️ قبل از انتقال وجه، شماره کارت و
+            نام صاحب حساب را با دقت بررسی کنید.
+            پس از پرداخت، رسید تراکنش را نزد خود نگه دارید.
+
+        </div>
+
+
+
+        <!-- PAID -->
 
         <a
             href="tel:09129374866"
-            class="pay-btn">
+            class="paid"
+            onclick="return confirmPayment()">
 
-            ✓ پرداخت کردم — تماس با پشتیبانی
+            ✓ پرداخت کردم
 
         </a>
 
 
 
-        <div class="phone">
+        <a
+            href="contact.html"
+            class="support">
 
-            شماره پشتیبانی:
+            ☎ مشکل یا سوالی درباره پرداخت دارید؟
 
-            <a href="tel:09129374866">
-
-                09129374866
-
-            </a>
-
-        </div>
-
+        </a>
 
     </div>
 
@@ -574,11 +602,15 @@ footer{
 
 
 
-<!-- FOOTER -->
-
 <footer>
 
-    آذین سنگ | بندر ماهشهر
+    <strong>
+        آذین سنگ
+    </strong>
+
+    <br><br>
+
+    بندر ماهشهر | خوزستان
 
 </footer>
 
@@ -586,154 +618,87 @@ footer{
 
 <script>
 
-/* ================= PRODUCT DATA ================= */
-
-const products = {
-
-    arsila:{
-        name:"ارسیلا",
-        price:"۱۵ میلیون تومان",
-        image:"arsila.jpg"
-    },
-
-    perslan:{
-        name:"پرسلان",
-        price:"۱۷ میلیون تومان",
-        image:"perslan.jpg"
-    },
-
-    aryana:{
-        name:"آریانا",
-        price:"۱۹ میلیون تومان",
-        image:"aryana.jpg"
-    },
-
-    romina:{
-        name:"رومینا",
-        price:"۲۱ میلیون تومان",
-        image:"romina.jpg"
-    },
-
-    atrin:{
-        name:"آترین",
-        price:"۲۳ میلیون تومان",
-        image:"atrin.jpg"
-    },
-
-    maral:{
-        name:"مارال",
-        price:"۲۵ میلیون تومان",
-        image:"maral.jpg"
-    },
-
-    dalia:{
-        name:"دالیا",
-        price:"۲۷ میلیون تومان",
-        image:"dalia.jpg"
-    },
-
-    selin:{
-        name:"سلین",
-        price:"۲۹ میلیون تومان",
-        image:"selin.jpg"
-    },
-
-    viana:{
-        name:"ویانا",
-        price:"۳۱ میلیون تومان",
-        image:"viana.jpg"
-    },
-
-    alma:{
-        name:"آلما",
-        price:"۳۲ میلیون تومان",
-        image:"alma.jpg"
-    },
-
-    karina:{
-        name:"کارینا",
-        price:"۳۴ میلیون تومان",
-        image:"karina.jpg"
-    },
-
-    nora:{
-        name:"نورا",
-        price:"۳۵ میلیون تومان",
-        image:"nora.jpg"
-    }
-
-};
-
-
-/* ================= GET PRODUCT ================= */
+/* PRODUCT FROM URL */
 
 const params =
     new URLSearchParams(
         window.location.search
     );
 
-const selected =
+const name =
     params.get("name");
 
-
-if(products[selected]){
-
-    document.getElementById(
-        "productName"
-    ).textContent =
-        products[selected].name;
+const price =
+    params.get("price");
 
 
-    document.getElementById(
-        "productPrice"
-    ).textContent =
-        products[selected].price;
+if(name){
 
+    document
+        .getElementById("productName")
+        .textContent = name;
 
-    document.getElementById(
-        "productImage"
-    ).src =
-        products[selected].image;
+}
+
+if(price){
+
+    document
+        .getElementById("productPrice")
+        .textContent = price;
 
 }
 
 
-/* ================= COPY CARD ================= */
+/* COPY CARD */
 
 function copyCard(){
 
     const card =
         "6104337451668311";
 
-    navigator.clipboard.writeText(card)
-    .then(function(){
+    navigator.clipboard
+        .writeText(card)
+        .then(function(){
 
-        const btn =
-            document.querySelector(".copy-btn");
+            const btn =
+                document.querySelector(".copy");
 
-        btn.textContent =
-            "✓ شماره کارت کپی شد";
-
-        setTimeout(function(){
+            const old =
+                btn.textContent;
 
             btn.textContent =
-                "📋 کپی شماره کارت";
+                "✓ شماره کارت کپی شد";
 
-        },2000);
+            setTimeout(function(){
 
-    })
-    .catch(function(){
+                btn.textContent = old;
 
-        alert(
-            "شماره کارت: 6104337451668311"
-        );
+            },2000);
 
-    });
+        })
+        .catch(function(){
+
+            alert(
+                "کپی خودکار انجام نشد؛ شماره کارت را دستی کپی کنید."
+            );
+
+        });
+
+}
+
+
+/* PAYMENT */
+
+function confirmPayment(){
+
+    return confirm(
+        "آیا پرداخت را انجام داده‌اید؟\n\n" +
+        "پس از تأیید، صفحه تماس باز می‌شود تا با آذین سنگ هماهنگ کنید."
+    );
 
 }
 
 </script>
-
 
 </body>
 
