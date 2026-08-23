@@ -3,153 +3,708 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>آذین سنگ | روشویی دست‌ساز</title>
+
+<title>آذین سنگ | روشویی‌های دست‌ساز</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
 
 body{
     font-family:Tahoma,Arial,sans-serif;
-    background:#f4f1eb;
-    color:#222;
+    background:#111;
+    color:#fff;
+    overflow-x:hidden;
 }
 
+/* ================= HEADER ================= */
+
 header{
-    height:70px;
-    background:#fff;
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    height:75px;
+    z-index:1000;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:0 7%;
-    box-shadow:0 2px 15px #0001;
+
+    padding:0 6%;
+
+    background:rgba(15,15,15,.72);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .logo{
     font-size:25px;
     font-weight:bold;
+    letter-spacing:1px;
 }
 
-.logo span{color:#a77b35}
+.logo span{
+    color:#c99b54;
+}
+
+.header-phone{
+    color:#fff;
+    text-decoration:none;
+
+    border:1px solid rgba(201,155,84,.6);
+    padding:10px 17px;
+    border-radius:30px;
+
+    font-size:13px;
+}
+
+/* ================= HERO ================= */
 
 .hero{
-    min-height:calc(100vh - 70px);
+    min-height:100vh;
+
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
+
     text-align:center;
-    padding:30px;
+
+    padding:100px 20px 50px;
+
+    position:relative;
+
     background:
-    linear-gradient(#0008,#0008),
-    url("images/arsila.jpg") center/cover;
-    color:white;
+        linear-gradient(
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.78)
+        ),
+        url("arsila.jpg") center/cover no-repeat;
 }
 
-.content{
-    max-width:750px;
+.hero::after{
+    content:"";
+
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+
+    height:180px;
+
+    background:linear-gradient(
+        transparent,
+        #111
+    );
 }
 
-h1{
-    font-size:55px;
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    max-width:850px;
+
+    animation:fadeUp 1.2s ease;
+}
+
+.small-title{
+    color:#d3aa67;
+    font-size:14px;
+    letter-spacing:3px;
+
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:65px;
     margin-bottom:20px;
+
+    text-shadow:
+        0 10px 40px rgba(0,0,0,.6);
 }
 
-h1 span{color:#e3bb73}
+.hero h1 span{
+    color:#d2a65c;
+}
 
-.intro{
+.hero p{
     font-size:18px;
     line-height:2.2;
-    margin-bottom:35px;
+
+    color:#eee;
+
+    max-width:700px;
+    margin:auto auto 35px;
 }
+
+/* ================= BUTTONS ================= */
 
 .buttons{
     display:flex;
     justify-content:center;
-    gap:15px;
+    gap:13px;
     flex-wrap:wrap;
 }
 
 .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-width:170px;
+
+    padding:15px 25px;
+
+    border-radius:12px;
+
     text-decoration:none;
-    padding:16px 28px;
-    border-radius:13px;
+
     font-weight:bold;
-    transition:.2s;
+    font-size:14px;
+
+    transition:.3s;
+
+    position:relative;
+    overflow:hidden;
 }
 
-.btn:hover{transform:translateY(-3px)}
+.btn:hover{
+    transform:translateY(-4px);
+}
 
 .gold{
-    background:#b88a42;
-    color:white;
+    color:#111;
+
+    background:linear-gradient(
+        135deg,
+        #e3c17c,
+        #a97732
+    );
+
+    box-shadow:
+        0 10px 30px rgba(183,135,59,.25);
 }
 
-.white{
-    background:white;
-    color:#222;
+.dark{
+    color:white;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    backdrop-filter:blur(10px);
 }
+
+/* ================= WHY US ================= */
+
+.why{
+    background:#111;
+
+    padding:100px 6%;
+}
+
+.section-title{
+    text-align:center;
+
+    margin-bottom:55px;
+}
+
+.section-title small{
+    color:#c99b54;
+}
+
+.section-title h2{
+    font-size:35px;
+
+    margin-top:12px;
+}
+
+.features{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:20px;
+}
+
+.feature{
+    padding:30px 20px;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    transition:.3s;
+}
+
+.feature:hover{
+    transform:translateY(-7px);
+
+    border-color:
+        rgba(201,155,84,.5);
+}
+
+.icon{
+    width:60px;
+    height:60px;
+
+    margin:0 auto 18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:18px;
+
+    background:
+        rgba(201,155,84,.12);
+
+    color:#d3aa67;
+
+    font-size:25px;
+}
+
+.feature h3{
+    margin-bottom:12px;
+}
+
+.feature p{
+    color:#aaa;
+
+    font-size:13px;
+
+    line-height:2;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    padding:90px 20px;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.65),
+            rgba(0,0,0,.8)
+        ),
+        url("arsila.jpg") center/cover fixed;
+}
+
+.cta h2{
+    font-size:38px;
+
+    margin-bottom:15px;
+}
+
+.cta p{
+    color:#ddd;
+
+    line-height:2;
+
+    margin-bottom:30px;
+}
+
+/* ================= FOOTER ================= */
 
 footer{
-    position:absolute;
-    bottom:15px;
-    width:100%;
+    background:#080808;
+
+    padding:40px 6%;
+
     text-align:center;
-    color:#ddd;
-    font-size:13px;
+
+    border-top:
+        1px solid rgba(255,255,255,.07);
 }
 
-@media(max-width:600px){
-    h1{font-size:40px}
-    .intro{font-size:15px}
+.footer-logo{
+    font-size:23px;
+    font-weight:bold;
+
+    margin-bottom:12px;
 }
+
+.footer-logo span{
+    color:#c99b54;
+}
+
+footer p{
+    color:#888;
+
+    font-size:13px;
+
+    line-height:2;
+}
+
+.footer-phone{
+    display:inline-block;
+
+    margin-top:15px;
+
+    color:#d3aa67;
+
+    text-decoration:none;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:800px){
+
+    .header-phone{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .features{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:500px){
+
+    header{
+        height:65px;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    .hero{
+        padding-top:90px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .small-title{
+        font-size:11px;
+    }
+
+    .buttons{
+        flex-direction:column;
+
+        max-width:300px;
+
+        margin:auto;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .why{
+        padding:70px 20px;
+    }
+
+    .section-title h2{
+        font-size:28px;
+    }
+
+    .cta h2{
+        font-size:30px;
+    }
+
+}
+
 </style>
+
 </head>
 
 <body>
 
+
+<!-- ================= HEADER ================= -->
+
 <header>
+
     <div class="logo">
         آذین <span>سنگ</span>
     </div>
+
+    <a
+        href="tel:09129374866"
+        class="header-phone">
+
+        📞 09129374866
+
+    </a>
+
 </header>
 
-<main class="hero">
 
-    <div class="content">
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            AZIN SANG
+        </div>
 
         <h1>
             آذین <span>سنگ</span>
         </h1>
 
-        <p class="intro">
+        <p>
+
             تولید و طراحی روشویی‌های سنگی دست‌ساز
-            با امکان ساخت در طرح، فرم و ابعاد دلخواه شما.
+
             <br>
-            هر طرحی که بخواهید، برای شما اجرا می‌کنیم.
+
+            ساخت در طرح، فرم و ابعاد دلخواه شما
+
         </p>
+
 
         <div class="buttons">
 
-            <a href="products.html" class="btn gold">
-                نمونه کارها
+            <a
+                href="products.html"
+                class="btn gold">
+
+                مشاهده نمونه‌کارها
+
             </a>
 
-            <a href="contact.html" class="btn white">
+
+            <a
+                href="contact.html"
+                class="btn dark">
+
                 تماس با پشتیبانی
+
             </a>
 
-            <a href="address.html" class="btn white">
-                آدرس
+
+            <a
+                href="address.html"
+                class="btn dark">
+
+                📍 آدرس
+
             </a>
 
         </div>
 
     </div>
 
-</main>
+</section>
+
+
+<!-- ================= WHY US ================= -->
+
+<section class="why">
+
+    <div class="section-title">
+
+        <small>
+            چرا آذین سنگ؟
+        </small>
+
+        <h2>
+            خاص بسازید، متفاوت باشید
+        </h2>
+
+    </div>
+
+
+    <div class="features">
+
+
+        <div class="feature">
+
+            <div class="icon">
+                ✦
+            </div>
+
+            <h3>
+                دست‌ساز
+            </h3>
+
+            <p>
+                هر روشویی با دقت و ظرافت
+                ساخته می‌شود.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="icon">
+                ◈
+            </div>
+
+            <h3>
+                سفارشی‌سازی
+            </h3>
+
+            <p>
+                طرح و فرم موردنظر شما
+                قابل اجراست.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="icon">
+                ◆
+            </div>
+
+            <h3>
+                طراحی اختصاصی
+            </h3>
+
+            <p>
+                محصولی متناسب با
+                فضای شما طراحی می‌کنیم.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="icon">
+                ✓
+            </div>
+
+            <h3>
+                کیفیت ساخت
+            </h3>
+
+            <p>
+                توجه به جزئیات در تمام
+                مراحل تولید.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <h2>
+        روشویی دلخواهت رو بساز
+    </h2>
+
+    <p>
+        اگر طرح خاصی در ذهن دارید،
+        با ما تماس بگیرید.
+        <br>
+        امکان ساخت مدل سفارشی شما وجود دارد.
+    </p>
+
+    <a
+        href="products.html"
+        class="btn gold">
+
+        دیدن نمونه‌کارها
+
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
-    آذین سنگ | بندر ماهشهر
+
+    <div class="footer-logo">
+
+        آذین <span>سنگ</span>
+
+    </div>
+
+    <p>
+
+        استان خوزستان، بندر ماهشهر
+
+        <br>
+
+        انتهای خیابان طالقانی،
+        جنب پمپ بنزین پاسارگاد
+
+        <br>
+
+        ۸ صبح تا ۱۳ ظهر | ۱۷ تا ۲۱
+
+    </p>
+
+
+    <a
+        href="tel:09129374866"
+        class="footer-phone">
+
+        📞تماس
+
+    </a>
+
 </footer>
+
 
 </body>
 </html>
