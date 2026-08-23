@@ -4,168 +4,737 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>پرداخت | آذین سنگ</title>
 
 <style>
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-margin:0;
-font-family:Tahoma,Arial;
-background:#f4f1eb;
+    font-family:Tahoma,Arial,sans-serif;
+    background:#111;
+    color:#fff;
+    min-height:100vh;
 }
 
-.box{
-max-width:550px;
-margin:60px auto;
-background:white;
-padding:30px;
-border-radius:20px;
-text-align:center;
+/* HEADER */
+
+header{
+    height:75px;
+    padding:0 6%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:rgba(15,15,15,.9);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-.card{
-background:#f4f1eb;
-padding:20px;
-border-radius:15px;
-margin:25px 0;
+.logo{
+    font-size:24px;
+    font-weight:bold;
 }
 
-.number{
-direction:ltr;
-font-size:21px;
-font-weight:bold;
-background:white;
-padding:15px;
-border-radius:10px;
-margin:10px 0;
-}
-
-button,
-.call{
-width:100%;
-border:0;
-padding:15px;
-border-radius:11px;
-cursor:pointer;
-font-size:15px;
-}
-
-button{
-background:#b88942;
-color:white;
-}
-
-.call{
-display:block;
-background:#222;
-color:white;
-text-decoration:none;
-margin-top:15px;
+.logo span{
+    color:#c99b54;
 }
 
 .back{
-display:block;
-margin-top:20px;
-color:#555;
+    color:#ddd;
+    text-decoration:none;
+
+    padding:10px 16px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:25px;
+
+    font-size:12px;
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:650px;
+    margin:auto;
+
+    padding:55px 20px 80px;
+}
+
+/* TITLE */
+
+.title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.small{
+    color:#c99b54;
+    font-size:11px;
+    letter-spacing:3px;
+    margin-bottom:12px;
+}
+
+.title h1{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.title p{
+    color:#888;
+    font-size:12px;
+}
+
+/* PRODUCT */
+
+.product-box{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    padding:15px;
+
+    background:#1b1b1b;
+
+    border:1px solid
+        rgba(255,255,255,.08);
+
+    border-radius:17px;
+
+    margin-bottom:20px;
+}
+
+.product-box img{
+
+    width:85px;
+    height:85px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+}
+
+.product-info h2{
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.product-info span{
+    color:#d2a65c;
+    font-weight:bold;
+    font-size:14px;
+}
+
+/* PAYMENT CARD */
+
+.payment-card{
+
+    padding:25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #252525,
+            #151515
+        );
+
+    border-radius:22px;
+
+    border:1px solid
+        rgba(201,155,84,.25);
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.35);
+
+}
+
+/* BANK CARD */
+
+.bank-card{
+
+    padding:25px;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #303030,
+            #161616
+        );
+
+    border:1px solid
+        rgba(255,255,255,.1);
+
+    margin-bottom:25px;
+}
+
+.bank-name{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    color:#aaa;
+
+    font-size:12px;
+
+    margin-bottom:25px;
+}
+
+.card-number{
+
+    direction:ltr;
+
+    text-align:center;
+
+    font-size:21px;
+
+    letter-spacing:2px;
+
+    margin-bottom:18px;
+
+    color:#fff;
+}
+
+.owner{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    color:#ccc;
+
+    font-size:12px;
+}
+
+/* COPY */
+
+.copy-btn{
+
+    width:100%;
+
+    padding:13px;
+
+    border:1px solid
+        rgba(201,155,84,.4);
+
+    background:
+        rgba(201,155,84,.08);
+
+    color:#d3aa67;
+
+    border-radius:11px;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+    font-size:13px;
+
+    margin-bottom:25px;
+
+}
+
+/* WARNING */
+
+.notice{
+
+    padding:15px;
+
+    background:
+        rgba(255,180,0,.06);
+
+    border:1px solid
+        rgba(255,180,0,.15);
+
+    border-radius:12px;
+
+    color:#aaa;
+
+    font-size:11px;
+
+    line-height:2;
+
+    margin-bottom:20px;
+
+}
+
+/* PAY BUTTON */
+
+.pay-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:100%;
+
+    padding:16px;
+
+    border:0;
+
+    border-radius:13px;
+
+    text-decoration:none;
+
+    color:#111;
+
+    font-weight:bold;
+
+    font-family:inherit;
+
+    font-size:14px;
+
+    cursor:pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e2bf7b,
+            #a97732
+        );
+
+    transition:.3s;
+
+}
+
+.pay-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(201,155,84,.2);
+
+}
+
+/* PHONE */
+
+.phone{
+
+    text-align:center;
+
+    margin-top:20px;
+
+    color:#777;
+
+    font-size:11px;
+
+}
+
+.phone a{
+
+    color:#c99b54;
+
+    text-decoration:none;
+
+}
+
+/* FOOTER */
+
+footer{
+
+    text-align:center;
+
+    padding:30px;
+
+    color:#666;
+
+    font-size:11px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.07);
+
+}
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+    header{
+        height:65px;
+        padding:0 15px;
+    }
+
+    .logo{
+        font-size:19px;
+    }
+
+    .container{
+        padding:35px 12px 60px;
+    }
+
+    .title h1{
+        font-size:27px;
+    }
+
+    .payment-card{
+        padding:15px;
+    }
+
+    .bank-card{
+        padding:20px 12px;
+    }
+
+    .card-number{
+        font-size:16px;
+        letter-spacing:1px;
+    }
+
 }
 
 </style>
 
 </head>
 
+
 <body>
 
-<div class="box">
 
-<h1>پرداخت سفارش</h1>
+<!-- HEADER -->
 
-<h2 id="product"></h2>
+<header>
 
-<div class="card">
+    <div class="logo">
 
-<p>مبلغ:</p>
+        آذین <span>سنگ</span>
 
-<h2 id="price"></h2>
+    </div>
 
-<hr>
+    <a
+        href="products.html"
+        class="back">
 
-<p>شماره کارت</p>
+        ← نمونه‌کارها
 
-<div class="number">
-6104 3374 5166 8311
-</div>
+    </a>
 
-<p>
-<strong>کامران امیدی</strong>
-</p>
+</header>
 
-<p>
-بانک ملت
-</p>
 
-<button onclick="copyCard()">
-کپی شماره کارت
-</button>
 
-</div>
+<!-- MAIN -->
 
-<p>
-پس از انتقال وجه، برای ثبت سفارش با فروشگاه تماس بگیرید.
-</p>
+<main class="container">
 
-<a class="call" href="tel:09129374866">
-پرداخت کردم — تماس با فروشگاه
-</a>
 
-<a href="products.html" class="back">
-بازگشت به محصولات
-</a>
+    <div class="title">
 
-</div>
+        <div class="small">
+            AZIN SANG
+        </div>
+
+        <h1>
+            پرداخت سفارش
+        </h1>
+
+        <p>
+            اطلاعات محصول و پرداخت را بررسی کنید.
+        </p>
+
+    </div>
+
+
+
+    <!-- PRODUCT -->
+
+    <div class="product-box">
+
+        <img
+            id="productImage"
+            src="arsila.jpg"
+            alt="محصول">
+
+        <div class="product-info">
+
+            <h2 id="productName">
+                ارسیلا
+            </h2>
+
+            <span id="productPrice">
+                ۱۵ میلیون تومان
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- PAYMENT -->
+
+    <div class="payment-card">
+
+
+        <div class="bank-card">
+
+            <div class="bank-name">
+
+                <span>
+                    بانک ملت
+                </span>
+
+                <span>
+                    آذین سنگ
+                </span>
+
+            </div>
+
+
+            <div class="card-number">
+
+                6104 3374 5166 8311
+
+            </div>
+
+
+            <div class="owner">
+
+                <span>
+                    صاحب حساب
+                </span>
+
+                <strong>
+                    کامران امیدی
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- COPY -->
+
+        <button
+            class="copy-btn"
+            onclick="copyCard()">
+
+            📋 کپی شماره کارت
+
+        </button>
+
+
+
+        <!-- NOTICE -->
+
+        <div class="notice">
+
+            لطفاً پس از واریز وجه، روی دکمه
+            «پرداخت کردم» بزنید تا با پشتیبانی
+            تماس بگیرید و سفارش شما بررسی شود.
+
+        </div>
+
+
+
+        <!-- PAY -->
+
+        <a
+            href="tel:09129374866"
+            class="pay-btn">
+
+            ✓ پرداخت کردم — تماس با پشتیبانی
+
+        </a>
+
+
+
+        <div class="phone">
+
+            شماره پشتیبانی:
+
+            <a href="tel:09129374866">
+
+                09129374866
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    آذین سنگ | بندر ماهشهر
+
+</footer>
+
 
 
 <script>
 
-const data={
+/* ================= PRODUCT DATA ================= */
 
-arsila:["ارسیلا","۱۵ میلیون تومان"],
-perslan:["پرسلان","۱۷ میلیون تومان"],
-aryana:["آریانا","۱۹ میلیون تومان"],
-romina:["رومینا","۲۱ میلیون تومان"],
-atrin:["آترین","۲۳ میلیون تومان"],
-maral:["مارال","۲۵ میلیون تومان"],
-dalia:["دالیا","۲۷ میلیون تومان"],
-selin:["سلین","۲۹ میلیون تومان"],
-viana:["ویانا","۳۱ میلیون تومان"],
-alma:["آلما","۳۲ میلیون تومان"],
-karina:["کارینا","۳۴ میلیون تومان"],
-nora:["نورا","۳۵ میلیون تومان"]
+const products = {
+
+    arsila:{
+        name:"ارسیلا",
+        price:"۱۵ میلیون تومان",
+        image:"arsila.jpg"
+    },
+
+    perslan:{
+        name:"پرسلان",
+        price:"۱۷ میلیون تومان",
+        image:"perslan.jpg"
+    },
+
+    aryana:{
+        name:"آریانا",
+        price:"۱۹ میلیون تومان",
+        image:"aryana.jpg"
+    },
+
+    romina:{
+        name:"رومینا",
+        price:"۲۱ میلیون تومان",
+        image:"romina.jpg"
+    },
+
+    atrin:{
+        name:"آترین",
+        price:"۲۳ میلیون تومان",
+        image:"atrin.jpg"
+    },
+
+    maral:{
+        name:"مارال",
+        price:"۲۵ میلیون تومان",
+        image:"maral.jpg"
+    },
+
+    dalia:{
+        name:"دالیا",
+        price:"۲۷ میلیون تومان",
+        image:"dalia.jpg"
+    },
+
+    selin:{
+        name:"سلین",
+        price:"۲۹ میلیون تومان",
+        image:"selin.jpg"
+    },
+
+    viana:{
+        name:"ویانا",
+        price:"۳۱ میلیون تومان",
+        image:"viana.jpg"
+    },
+
+    alma:{
+        name:"آلما",
+        price:"۳۲ میلیون تومان",
+        image:"alma.jpg"
+    },
+
+    karina:{
+        name:"کارینا",
+        price:"۳۴ میلیون تومان",
+        image:"karina.jpg"
+    },
+
+    nora:{
+        name:"نورا",
+        price:"۳۵ میلیون تومان",
+        image:"nora.jpg"
+    }
 
 };
 
-const key =
-new URLSearchParams(location.search).get("name")
-||"arsila";
 
-document.getElementById("product")
-.innerText="روشویی "+data[key][0];
+/* ================= GET PRODUCT ================= */
 
-document.getElementById("price")
-.innerText=data[key][1];
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+const selected =
+    params.get("name");
+
+
+if(products[selected]){
+
+    document.getElementById(
+        "productName"
+    ).textContent =
+        products[selected].name;
+
+
+    document.getElementById(
+        "productPrice"
+    ).textContent =
+        products[selected].price;
+
+
+    document.getElementById(
+        "productImage"
+    ).src =
+        products[selected].image;
+
+}
+
+
+/* ================= COPY CARD ================= */
 
 function copyCard(){
 
-navigator.clipboard.writeText(
-"6104337451668311"
-);
+    const card =
+        "6104337451668311";
 
-alert("شماره کارت کپی شد ✓");
+    navigator.clipboard.writeText(card)
+    .then(function(){
+
+        const btn =
+            document.querySelector(".copy-btn");
+
+        btn.textContent =
+            "✓ شماره کارت کپی شد";
+
+        setTimeout(function(){
+
+            btn.textContent =
+                "📋 کپی شماره کارت";
+
+        },2000);
+
+    })
+    .catch(function(){
+
+        alert(
+            "شماره کارت: 6104337451668311"
+        );
+
+    });
 
 }
 
 </script>
 
+
 </body>
-</html>
+
+  </html>
