@@ -1,11 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>جزئیات روشویی | آذین سنگ</title>
+<title>جزئیات محصول | آذین سنگ</title>
 
 <style>
 
@@ -17,75 +18,57 @@
 
 body{
     font-family:Tahoma,Arial,sans-serif;
-    background:#f3f3f1;
-    color:#222;
+    background:#111;
+    color:#fff;
 }
 
-/* HEADER */
-
 header{
-    height:70px;
+    height:75px;
     padding:0 6%;
 
     display:flex;
     align-items:center;
     justify-content:space-between;
 
-    background:rgba(250,250,248,.94);
-    backdrop-filter:blur(15px);
-
-    border-bottom:1px solid #dedfdb;
-
     position:sticky;
     top:0;
     z-index:100;
+
+    background:rgba(15,15,15,.9);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .logo{
-    font-size:22px;
-    font-weight:900;
+    font-size:24px;
+    font-weight:bold;
 }
 
 .logo span{
-    color:#68716c;
+    color:#c99b54;
 }
-
-/* BACK */
 
 .back{
+    color:#ddd;
     text-decoration:none;
 
-    color:#505652;
+    padding:10px 17px;
 
-    background:#fff;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:25px;
 
-    border:1px solid #d5d8d5;
-
-    padding:9px 16px;
-
-    border-radius:10px;
-
-    font-size:11px;
-
-    transition:.25s;
+    font-size:13px;
 }
-
-.back:hover{
-    background:#272c29;
-    color:#fff;
-}
-
-/* MAIN */
 
 .container{
-    max-width:1100px;
+    width:100%;
+    max-width:1200px;
 
     margin:auto;
 
-    padding:45px 20px 80px;
+    padding:55px 25px 80px;
 }
-
-/* PRODUCT */
 
 .product{
 
@@ -96,31 +79,30 @@ header{
 
     gap:45px;
 
-    align-items:start;
-}
+    align-items:center;
 
-/* IMAGE */
+}
 
 .image-box{
 
     position:relative;
 
-    background:#dededb;
+    background:#1b1b1b;
 
-    border-radius:24px;
+    border-radius:25px;
 
     overflow:hidden;
 
-    box-shadow:
-        0 20px 55px
-        rgba(30,35,32,.12);
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 25px 70px rgba(0,0,0,.45);
+
 }
 
 .image-box img{
 
     width:100%;
-
-    height:600px;
+    height:570px;
 
     object-fit:cover;
 
@@ -128,105 +110,76 @@ header{
 
 }
 
-/* IMAGE NUMBER */
-
-.product-number{
+.badge{
 
     position:absolute;
 
-    top:15px;
+    top:20px;
+    right:20px;
 
-    right:15px;
+    background:rgba(0,0,0,.7);
 
-    background:rgba(255,255,255,.9);
+    backdrop-filter:blur(10px);
 
-    color:#4f5752;
+    color:#d8ad68;
 
-    padding:8px 11px;
+    border:1px solid rgba(201,155,84,.4);
 
-    border-radius:9px;
+    padding:9px 15px;
 
-    font-size:9px;
+    border-radius:25px;
+
+    font-size:12px;
+
 }
-
-/* DETAILS */
 
 .details{
-
-    padding-top:10px;
+    padding:15px 5px;
 }
 
-.category{
+.small{
 
-    color:#747c77;
+    color:#c99b54;
 
-    font-size:10px;
+    font-size:12px;
 
-    letter-spacing:2px;
+    letter-spacing:3px;
 
     margin-bottom:15px;
+
 }
 
 .details h1{
 
-    font-size:43px;
+    font-size:45px;
 
-    margin-bottom:14px;
-}
+    margin-bottom:20px;
 
-.description{
-
-    color:#777d79;
-
-    font-size:12px;
-
-    line-height:2.3;
-
-    margin-bottom:25px;
-}
-
-/* PRICE */
-
-.price-box{
-
-    background:#fff;
-
-    border:1px solid #e0e1de;
-
-    border-radius:16px;
-
-    padding:20px;
-
-    margin-bottom:15px;
-}
-
-.price-title{
-
-    color:#888d89;
-
-    font-size:9px;
-
-    margin-bottom:8px;
 }
 
 .price{
 
-    font-size:26px;
+    font-size:28px;
 
     font-weight:bold;
 
-    color:#252a27;
-}
+    color:#d5aa61;
 
-.price small{
-
-    font-size:10px;
-
-    color:#7c827e;
+    margin-bottom:25px;
 
 }
 
-/* FEATURES */
+.text{
+
+    color:#aaa;
+
+    line-height:2.2;
+
+    font-size:14px;
+
+    margin-bottom:25px;
+
+}
 
 .features{
 
@@ -235,133 +188,140 @@ header{
     grid-template-columns:
         repeat(2,1fr);
 
-    gap:9px;
+    gap:10px;
 
-    margin-bottom:20px;
+    margin-bottom:30px;
+
 }
 
 .feature{
 
-    padding:14px;
+    padding:15px;
 
-    border-radius:12px;
+    border-radius:13px;
 
-    background:#fff;
+    background:rgba(255,255,255,.05);
 
-    border:1px solid #e1e2df;
-}
+    border:1px solid rgba(255,255,255,.07);
 
-.feature span{
-
-    display:block;
-
-    color:#888d89;
-
-    font-size:8px;
-
-    margin-bottom:6px;
 }
 
 .feature strong{
 
-    font-size:11px;
-}
-
-/* BUY */
-
-.buy{
-
     display:block;
 
-    width:100%;
-
-    text-align:center;
-
-    text-decoration:none;
-
-    padding:16px;
-
-    border-radius:12px;
-
-    background:#3f6753;
-
-    color:#fff;
+    color:#ddd;
 
     font-size:12px;
 
-    font-weight:bold;
+    margin-bottom:7px;
 
-    margin-bottom:10px;
-
-    transition:.25s;
 }
 
-.buy:hover{
+.feature span{
 
-    background:#31513f;
+    color:#888;
 
-    transform:translateY(-3px);
+    font-size:11px;
 
-    box-shadow:
-        0 10px 25px
-        rgba(63,103,83,.18);
 }
 
-/* CONTACT */
+.buttons{
 
-.contact{
+    display:flex;
 
-    display:block;
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.btn{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
 
     width:100%;
-
-    text-align:center;
-
-    text-decoration:none;
-
-    padding:14px;
-
-    border-radius:12px;
-
-    background:#e8eef4;
-
-    color:#31536e;
-
-    font-size:10px;
-
-    border:1px solid #d7e1ea;
-
-    transition:.25s;
-}
-
-.contact:hover{
-
-    background:#dce7f0;
-
-}
-
-/* NOTE */
-
-.note{
-
-    margin-top:18px;
 
     padding:16px;
 
     border-radius:13px;
 
-    background:#f0f1ef;
+    text-decoration:none;
 
-    border:1px solid #dedfdb;
+    font-size:14px;
 
-    color:#777d79;
+    font-weight:bold;
 
-    font-size:9px;
+    transition:.3s;
 
-    line-height:2;
 }
 
-/* FOOTER */
+.buy{
+
+    color:#111;
+
+    background:linear-gradient(
+        135deg,
+        #e2bf7b,
+        #a97732
+    );
+
+}
+
+.call{
+
+    color:#fff;
+
+    background:#1d1d1d;
+
+    border:1px solid rgba(255,255,255,.1);
+
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.custom{
+
+    margin-top:25px;
+
+    padding:20px;
+
+    border-radius:17px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(201,155,84,.12),
+        rgba(255,255,255,.03)
+    );
+
+    border:1px solid rgba(201,155,84,.2);
+
+}
+
+.custom h3{
+
+    color:#d2a65c;
+
+    font-size:16px;
+
+    margin-bottom:10px;
+
+}
+
+.custom p{
+
+    color:#aaa;
+
+    font-size:12px;
+
+    line-height:2;
+
+}
 
 footer{
 
@@ -369,36 +329,30 @@ footer{
 
     padding:35px 20px;
 
-    background:#202422;
+    color:#777;
 
-    color:#8e9691;
+    font-size:12px;
 
-    font-size:10px;
+    border-top:1px solid rgba(255,255,255,.07);
+
 }
 
 footer strong{
-
-    color:#e3e6e4;
+    color:#c99b54;
 }
-
-/* MOBILE */
 
 @media(max-width:800px){
 
     .product{
-
         grid-template-columns:1fr;
-
-        gap:25px;
+        gap:30px;
     }
 
     .image-box img{
-
         height:430px;
     }
 
     .details h1{
-
         font-size:35px;
     }
 
@@ -407,53 +361,41 @@ footer strong{
 @media(max-width:500px){
 
     header{
-
-        height:63px;
-
-        padding:0 12px;
+        height:65px;
+        padding:0 15px;
     }
 
     .logo{
-
-        font-size:18px;
+        font-size:19px;
     }
 
     .back{
-
-        padding:8px 10px;
-
-        font-size:8px;
+        font-size:10px;
+        padding:8px 11px;
     }
 
     .container{
-
-        padding:
-            25px 12px 60px;
+        padding:30px 12px 60px;
     }
 
     .image-box{
-
         border-radius:18px;
     }
 
     .image-box img{
-
-        height:350px;
+        height:330px;
     }
 
     .details h1{
-
         font-size:30px;
     }
 
-    .description{
-
-        font-size:10px;
+    .price{
+        font-size:23px;
     }
 
-    .features{
-
-        grid-template-columns:1fr 1fr;
+    .text{
+        font-size:12px;
     }
 
 }
@@ -485,166 +427,155 @@ footer strong{
 
 <main class="container">
 
-
 <section class="product">
 
-
-    <!-- IMAGE -->
 
     <div class="image-box">
 
         <img
             id="productImage"
             src="arsila.jpg"
-            alt="روشویی آذین سنگ">
+            alt="روشویی">
 
-        <div
-            class="product-number"
-            id="productNumber">
-
-            01
-
+        <div class="badge">
+            دست‌ساز و سفارشی
         </div>
 
     </div>
 
 
 
-    <!-- DETAILS -->
-
     <div class="details">
 
-        <div class="category">
-            AZIN SANG / HANDMADE
+        <div class="small">
+            AZIN SANG
         </div>
+
 
         <h1 id="productName">
             ارسیلا
         </h1>
 
-        <p
-            class="description"
-            id="productDescription">
 
-            روشویی سنگی دست‌ساز با طراحی
-            خاص و امکان ساخت در ابعاد و
-            فرم دلخواه مشتری.
+        <div
+            class="price"
+            id="productPrice">
+
+            ۱۵ میلیون تومان
+
+        </div>
+
+
+        <p class="text">
+
+            این روشویی به صورت دست‌ساز در مجموعه
+            آذین سنگ تولید می‌شود.
+            امکان ساخت در طرح، فرم و ابعاد دلخواه
+            مشتری وجود دارد.
 
         </p>
 
 
-
-        <!-- PRICE -->
-
-        <div class="price-box">
-
-            <div class="price-title">
-                قیمت محصول
-            </div>
-
-            <div class="price">
-
-                <span id="productPrice">
-                    ۱۵ میلیون تومان
-                </span>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- FEATURES -->
-
         <div class="features">
 
+
             <div class="feature">
 
-                <span>
-                    نوع
-                </span>
-
                 <strong>
-                    روشویی سنگی
+                    نوع ساخت
                 </strong>
 
-            </div>
-
-
-            <div class="feature">
-
                 <span>
-                    ساخت
-                </span>
-
-                <strong>
                     دست‌ساز
-                </strong>
+                </span>
 
             </div>
 
 
             <div class="feature">
 
+                <strong>
+                    سفارشی‌سازی
+                </strong>
+
                 <span>
+                    دارد
+                </span>
+
+            </div>
+
+
+            <div class="feature">
+
+                <strong>
                     طراحی
-                </span>
-
-                <strong>
-                    سفارشی
                 </strong>
+
+                <span>
+                    اختصاصی
+                </span>
 
             </div>
 
 
             <div class="feature">
 
-                <span>
-                    ابعاد
-                </span>
-
                 <strong>
-                    قابل سفارش
+                    ابعاد
                 </strong>
+
+                <span>
+                    قابل سفارش
+                </span>
 
             </div>
 
+
+        </div>
+
+
+        <div class="buttons">
+
+            <!-- لینک خرید با جاوااسکریپت خودکار تنظیم می‌شود -->
+
+            <a
+                id="buyButton"
+                href="payment.html"
+                class="btn buy">
+
+                🛒 خرید این محصول
+
+            </a>
+
+
+            <a
+                href="tel:09129374866"
+                class="btn call">
+
+                📞 تماس برای سفارش
+
+            </a>
+
         </div>
 
 
+        <div class="custom">
 
-        <!-- BUY -->
+            <h3>
+                ✦ ساخت طبق سلیقه شما
+            </h3>
 
-        <a
-            href="payment.html"
-            class="buy"
-            id="buyButton">
+            <p>
 
-            🛒 خرید این محصول
+                اگر مدل، شکل یا ابعاد خاصی مدنظر دارید،
+                می‌توانید سفارش خود را با ما مطرح کنید.
+                آذین سنگ امکان ساخت روشویی سفارشی
+                را برای شما فراهم می‌کند.
 
-        </a>
-
-
-
-        <!-- CONTACT -->
-
-        <a
-            href="contact.html"
-            class="contact">
-
-            ☎ سوالی درباره محصول دارید؟
-
-        </a>
-
-
-
-        <div class="note">
-
-            این محصولات به صورت دست‌ساز تولید
-            می‌شوند و امکان تغییر در طرح،
-            شکل و ابعاد با هماهنگی مجموعه وجود دارد.
+            </p>
 
         </div>
+
 
     </div>
 
@@ -662,11 +593,11 @@ footer strong{
 
     <br><br>
 
-    روشویی‌های سنگی دست‌ساز
-
-    <br><br>
-
     بندر ماهشهر | خوزستان
+
+    <br>
+
+    09129374866
 
 </footer>
 
@@ -674,187 +605,141 @@ footer strong{
 
 <script>
 
-/*
-    اطلاعات محصولات
-*/
+
+/* ================= محصولات ================= */
 
 const products = {
 
     arsila:{
         name:"ارسیلا",
-        image:"arsila.jpg",
         price:"۱۵ میلیون تومان",
-        number:"01",
-        description:
-        "روشویی سنگی دست‌ساز با طراحی خاص و امکان ساخت در ابعاد و فرم دلخواه مشتری."
+        image:"arsila.jpg"
     },
 
     perslan:{
         name:"پرسلان",
-        image:"perslan.jpg",
         price:"۱۷ میلیون تومان",
-        number:"02",
-        description:
-        "طراحی مدرن و ساده، مناسب فضاهای مختلف سرویس بهداشتی."
+        image:"perslan.jpg"
     },
 
     aryana:{
         name:"آریانا",
-        image:"aryana.jpg",
         price:"۱۹ میلیون تومان",
-        number:"03",
-        description:
-        "مدلی خاص با قابلیت اجرای سفارشی بر اساس فضای شما."
+        image:"aryana.jpg"
     },
 
     romina:{
         name:"رومینا",
-        image:"romina.jpg",
         price:"۲۱ میلیون تومان",
-        number:"04",
-        description:
-        "روشویی دست‌ساز با فرم متفاوت و قابلیت سفارش اختصاصی."
+        image:"romina.jpg"
     },
 
     atrin:{
         name:"آترین",
-        image:"atrin.jpg",
         price:"۲۳ میلیون تومان",
-        number:"05",
-        description:
-        "مدلی مدرن با قابلیت ساخت در اندازه و فرم موردنظر."
+        image:"atrin.jpg"
     },
 
     maral:{
         name:"مارال",
-        image:"maral.jpg",
         price:"۲۵ میلیون تومان",
-        number:"06",
-        description:
-        "روشویی سنگی دست‌ساز با طراحی خاص."
+        image:"maral.jpg"
     },
 
     dalia:{
         name:"دالیا",
-        image:"dalia.jpg",
         price:"۲۷ میلیون تومان",
-        number:"07",
-        description:
-        "طراحی متفاوت برای دکوراسیون‌های مدرن."
+        image:"dalia.jpg"
     },
 
     selin:{
         name:"سلین",
-        image:"selin.jpg",
         price:"۲۹ میلیون تومان",
-        number:"08",
-        description:
-        "روشویی خاص با قابلیت اجرای سفارشی."
+        image:"selin.jpg"
     },
 
     viana:{
         name:"ویانا",
-        image:"viana.jpg",
         price:"۳۱ میلیون تومان",
-        number:"09",
-        description:
-        "طراحی خاص و دست‌ساز آذین سنگ."
+        image:"viana.jpg"
     },
 
     alma:{
         name:"آلما",
-        image:"alma.jpg",
         price:"۳۲ میلیون تومان",
-        number:"10",
-        description:
-        "مدلی متفاوت و قابل سفارش در ابعاد دلخواه."
+        image:"alma.jpg"
     },
 
     karina:{
         name:"کارینا",
-        image:"karina.jpg",
         price:"۳۴ میلیون تومان",
-        number:"11",
-        description:
-        "روشویی سنگی دست‌ساز با طراحی ویژه."
+        image:"karina.jpg"
     },
 
     nora:{
         name:"نورا",
-        image:"nora.jpg",
         price:"۳۵ میلیون تومان",
-        number:"12",
-        description:
-        "یکی از مدل‌های خاص آذین سنگ با امکان ساخت سفارشی."
+        image:"nora.jpg"
     }
 
 };
 
 
-/*
-    دریافت محصول از آدرس صفحه
-*/
+/* ================= محصول انتخاب‌شده ================= */
 
 const params =
     new URLSearchParams(
         window.location.search
     );
 
-const selected =
+const product =
     params.get("name");
 
 
-/*
-    نمایش محصول
-*/
+/* ================= نمایش محصول ================= */
 
-if(products[selected]){
+if(products[product]){
 
-    const p = products[selected];
+    document.getElementById(
+        "productName"
+    ).textContent =
+        products[product].name;
 
-    document
-        .getElementById("productName")
-        .textContent = p.name;
 
-    document
-        .getElementById("productImage")
-        .src = p.image;
+    document.getElementById(
+        "productPrice"
+    ).textContent =
+        products[product].price;
 
-    document
-        .getElementById("productImage")
-        .alt =
-        "روشویی " + p.name;
 
-    document
-        .getElementById("productPrice")
-        .textContent = p.price;
+    document.getElementById(
+        "productImage"
+    ).src =
+        products[product].image;
 
-    document
-        .getElementById("productNumber")
-        .textContent = p.number;
 
-    document
-        .getElementById("productDescription")
-        .textContent =
-        p.description;
+    document.getElementById(
+        "productImage"
+    ).alt =
+        "روشویی " +
+        products[product].name;
 
 
     /*
-        انتقال اطلاعات محصول به پرداخت
+       مهم:
+       محصول انتخاب‌شده را به صفحه پرداخت می‌فرستیم
     */
 
-    document
-        .getElementById("buyButton")
-        .href =
-        "payment.html?name="
-        + encodeURIComponent(p.name)
-        + "&price="
-        + encodeURIComponent(p.price);
+    document.getElementById(
+        "buyButton"
+    ).href =
+        "payment.html?name=" +
+        encodeURIComponent(product);
 
 }
 
 </script>
 
-</body>
 
+</body>
 </html>
