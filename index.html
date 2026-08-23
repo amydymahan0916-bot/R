@@ -3,332 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>آذین سنگ | روشویی‌های دست‌ساز</title>
+<title>آذین سنگ | روشویی دست‌ساز</title>
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-    font-family:Tahoma,Arial,sans-serif;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
-    background:#f5f3ef;
+    font-family:Tahoma,Arial,sans-serif;
+    background:#f4f1eb;
     color:#222;
 }
 
 header{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:rgba(255,255,255,.95);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid #ddd;
-    padding:15px 6%;
+    height:70px;
+    background:#fff;
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
+    padding:0 7%;
+    box-shadow:0 2px 15px #0001;
 }
 
 .logo{
-    font-size:24px;
+    font-size:25px;
     font-weight:bold;
 }
 
-.logo span{
-    color:#a77b35;
-}
-
-nav a{
-    text-decoration:none;
-    color:#333;
-    margin-right:20px;
-    font-size:14px;
-}
+.logo span{color:#a77b35}
 
 .hero{
-    min-height:82vh;
+    min-height:calc(100vh - 70px);
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     text-align:center;
-    padding:60px 20px;
+    padding:30px;
     background:
-    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)),
-    url("arsila.jpg") center/cover;
+    linear-gradient(#0008,#0008),
+    url("images/arsila.jpg") center/cover;
     color:white;
 }
 
-.hero-content{
+.content{
     max-width:750px;
 }
 
-.hero h1{
-    font-size:48px;
+h1{
+    font-size:55px;
     margin-bottom:20px;
 }
 
-.hero h1 span{
-    color:#e1b96b;
-}
+h1 span{color:#e3bb73}
 
-.hero p{
-    line-height:2.1;
-    font-size:17px;
-    margin-bottom:30px;
+.intro{
+    font-size:18px;
+    line-height:2.2;
+    margin-bottom:35px;
 }
 
 .buttons{
-    display:flex;
-    gap:12px;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-
-.btn{
-    border:0;
-    padding:14px 25px;
-    border-radius:12px;
-    cursor:pointer;
-    text-decoration:none;
-    display:inline-block;
-    font-size:15px;
-    transition:.2s;
-}
-
-.btn:hover{
-    transform:translateY(-2px);
-}
-
-.primary{
-    background:#b8893e;
-    color:white;
-}
-
-.secondary{
-    background:white;
-    color:#333;
-}
-
-section{
-    padding:70px 6%;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:40px;
-}
-
-.section-title h2{
-    font-size:32px;
-    margin-bottom:10px;
-}
-
-.section-title p{
-    color:#777;
-}
-
-.products{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.card{
-    background:white;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 8px 30px rgba(0,0,0,.08);
-    transition:.25s;
-    cursor:pointer;
-}
-
-.card:hover{
-    transform:translateY(-6px);
-}
-
-.card img{
-    width:100%;
-    height:270px;
-    object-fit:cover;
-    display:block;
-}
-
-.card-info{
-    padding:18px;
-}
-
-.card-info h3{
-    margin-bottom:10px;
-    font-size:20px;
-}
-
-.price{
-    color:#a06d20;
-    font-weight:bold;
-    font-size:17px;
-}
-
-.buy-btn{
-    width:100%;
-    margin-top:15px;
-    background:#222;
-    color:white;
-    border:0;
-    padding:12px;
-    border-radius:10px;
-    cursor:pointer;
-}
-
-.about{
-    background:#fff;
-}
-
-.about-box{
-    max-width:900px;
-    margin:auto;
-    text-align:center;
-    line-height:2.2;
-}
-
-.contact-box{
     display:flex;
     justify-content:center;
     gap:15px;
     flex-wrap:wrap;
 }
 
-.contact-btn{
-    padding:15px 25px;
-    border-radius:12px;
+.btn{
     text-decoration:none;
-    background:white;
-    color:#222;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    padding:16px 28px;
+    border-radius:13px;
+    font-weight:bold;
+    transition:.2s;
 }
 
-.address{
-    max-width:800px;
-    margin:auto;
+.btn:hover{transform:translateY(-3px)}
+
+.gold{
+    background:#b88a42;
+    color:white;
+}
+
+.white{
     background:white;
-    padding:30px;
-    border-radius:18px;
-    text-align:center;
-    line-height:2;
+    color:#222;
 }
 
 footer{
-    background:#191919;
-    color:white;
-    text-align:center;
-    padding:30px;
-    line-height:2;
-}
-
-/* modal */
-
-.modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.7);
-    z-index:500;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-}
-
-.modal-box{
-    background:white;
-    width:100%;
-    max-width:500px;
-    max-height:90vh;
-    overflow:auto;
-    border-radius:20px;
-    padding:25px;
-    position:relative;
-}
-
-.close{
     position:absolute;
-    left:15px;
-    top:12px;
-    font-size:28px;
-    cursor:pointer;
-}
-
-.modal img{
+    bottom:15px;
     width:100%;
-    border-radius:15px;
-    margin-bottom:20px;
-}
-
-.specs{
-    line-height:2;
-    color:#555;
-    margin:15px 0;
-}
-
-.payment{
-    background:#f5f3ef;
-    padding:20px;
-    border-radius:15px;
-    margin-top:20px;
-}
-
-.card-number{
-    background:white;
-    padding:15px;
-    border-radius:10px;
-    font-size:18px;
-    direction:ltr;
     text-align:center;
-    margin:10px 0;
-    font-weight:bold;
-    letter-spacing:1px;
+    color:#ddd;
+    font-size:13px;
 }
 
-.copy-btn{
-    width:100%;
-    border:0;
-    padding:12px;
-    border-radius:10px;
-    cursor:pointer;
-    background:#b8893e;
-    color:white;
-}
-
-@media(max-width:800px){
-    .products{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .hero h1{
-        font-size:36px;
-    }
-}
-
-@media(max-width:520px){
-    .products{
-        grid-template-columns:1fr;
-    }
-
-    nav{
-        display:none;
-    }
-
-    .hero{
-        min-height:75vh;
-    }
-
-    .hero h1{
-        font-size:31px;
-    }
-
-    section{
-        padding:50px 5%;
-    }
+@media(max-width:600px){
+    h1{font-size:40px}
+    .intro{font-size:15px}
 }
 </style>
 </head>
@@ -336,459 +107,49 @@ footer{
 <body>
 
 <header>
-    <div class="logo">آذین <span>سنگ</span></div>
-
-    <nav>
-        <a href="#home">خانه</a>
-        <a href="#products">نمونه‌کارها</a>
-        <a href="#contact">پشتیبانی</a>
-        <a href="#address">آدرس</a>
-    </nav>
+    <div class="logo">
+        آذین <span>سنگ</span>
+    </div>
 </header>
 
+<main class="hero">
 
-<!-- HERO -->
+    <div class="content">
 
-<section class="hero" id="home">
-    <div class="hero-content">
+        <h1>
+            آذین <span>سنگ</span>
+        </h1>
 
-        <h1>آذین <span>سنگ</span></h1>
-
-        <p>
-            تولید و طراحی انواع روشویی‌های سنگی دست‌ساز
+        <p class="intro">
+            تولید و طراحی روشویی‌های سنگی دست‌ساز
             با امکان ساخت در طرح، فرم و ابعاد دلخواه شما.
-            هر طرحی که در ذهن شما باشد، با دقت و ظرافت برایتان اجرا می‌کنیم.
+            <br>
+            هر طرحی که بخواهید، برای شما اجرا می‌کنیم.
         </p>
 
         <div class="buttons">
 
-            <a href="#products" class="btn primary">
-                مشاهده نمونه‌کارها
+            <a href="products.html" class="btn gold">
+                نمونه کارها
             </a>
 
-            <a href="#contact" class="btn secondary">
+            <a href="contact.html" class="btn white">
                 تماس با پشتیبانی
             </a>
 
-            <a href="#address" class="btn secondary">
-                آدرس فروشگاه
+            <a href="address.html" class="btn white">
+                آدرس
             </a>
 
         </div>
-    </div>
-</section>
-
-
-<!-- ABOUT -->
-
-<section class="about">
-
-    <div class="section-title">
-        <h2>درباره آذین سنگ</h2>
-    </div>
-
-    <div class="about-box">
-
-        <p>
-            در آذین سنگ، روشویی‌ها با تمرکز بر طراحی خاص،
-            کیفیت ساخت و زیبایی تولید می‌شوند.
-        </p>
-
-        <p>
-            تمامی محصولات قابلیت سفارشی‌سازی دارند و می‌توانیم
-            روشویی مورد نظر شما را در شکل، اندازه و طرح دلخواه تولید کنیم.
-        </p>
 
     </div>
 
-</section>
-
-
-<!-- PRODUCTS -->
-
-<section id="products">
-
-    <div class="section-title">
-
-        <h2>نمونه‌کارها</h2>
-
-        <p>
-            برای مشاهده مشخصات و قیمت، روی محصول مورد نظر کلیک کنید.
-        </p>
-
-    </div>
-
-
-    <div class="products" id="productList"></div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-    <div class="section-title">
-        <h2>تماس با پشتیبانی</h2>
-        <p>برای سفارش و مشاوره با ما در ارتباط باشید.</p>
-    </div>
-
-    <div class="contact-box">
-
-        <a class="contact-btn"
-           href="tel:09129374866">
-           📞 تماس تلفنی
-        </a>
-
-        <a class="contact-btn"
-           href="https://wa.me/989129374866"
-           target="_blank">
-           WhatsApp
-        </a>
-
-        <a class="contact-btn"
-           href="https://t.me/"
-           target="_blank">
-           Telegram
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- ADDRESS -->
-
-<section id="address">
-
-    <div class="section-title">
-        <h2>آدرس آذین سنگ</h2>
-    </div>
-
-    <div class="address">
-
-        <p>
-            استان خوزستان، شهر بندر ماهشهر
-        </p>
-
-        <p>
-            انتهای خیابان طالقانی،
-            جنب پمپ بنزین پاسارگاد
-        </p>
-
-        <br>
-
-        <p>
-            🕐 ساعت کاری:
-            ۸ صبح تا ۱۳ ظهر
-            <br>
-            ۱۷ تا ۲۱
-        </p>
-
-    </div>
-
-</section>
-
+</main>
 
 <footer>
-
-    <strong>آذین سنگ</strong>
-
-    <br>
-
-    تولید و طراحی روشویی‌های دست‌ساز
-
-    <br>
-
-    📞 09129374866
-
+    آذین سنگ | بندر ماهشهر
 </footer>
-
-
-<!-- PRODUCT MODAL -->
-
-<div class="modal" id="productModal">
-
-    <div class="modal-box">
-
-        <span class="close" onclick="closeModal()">×</span>
-
-        <img id="modalImage">
-
-        <h2 id="modalName"></h2>
-
-        <div class="specs" id="modalSpecs"></div>
-
-        <h3 id="modalPrice"></h3>
-
-        <button class="buy-btn" onclick="openPayment()">
-            خرید این محصول
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- PAYMENT MODAL -->
-
-<div class="modal" id="paymentModal">
-
-    <div class="modal-box">
-
-        <span class="close" onclick="closePayment()">×</span>
-
-        <h2>پرداخت سفارش</h2>
-
-        <p style="margin-top:15px">
-            مبلغ محصول:
-        </p>
-
-        <h2 id="paymentPrice"></h2>
-
-        <div class="payment">
-
-            <p>
-                شماره کارت:
-            </p>
-
-            <div class="card-number">
-                6104 3374 5166 8311
-            </div>
-
-            <p>
-                به نام: <strong>کامران امیدی</strong>
-            </p>
-
-            <p>
-                بانک ملت
-            </p>
-
-            <br>
-
-            <button class="copy-btn" onclick="copyCard()">
-                کپی شماره کارت
-            </button>
-
-            <br><br>
-
-            <p style="font-size:13px;color:#777">
-                پس از انتقال وجه، روی دکمه زیر بزنید
-                تا برای ثبت سفارش با فروشگاه تماس بگیرید.
-            </p>
-
-            <a
-              href="tel:09129374866"
-              class="btn primary"
-              style="width:100%;text-align:center;margin-top:15px">
-              پرداخت کردم — تماس با فروشگاه
-            </a>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<script>
-
-const products = [
-
-    {
-        name:"ارسیلا",
-        price:"۱۵ میلیون تومان",
-        image:"arsila.jpg"
-    },
-
-    {
-        name:"پرسلان",
-        price:"۱۷ میلیون تومان",
-        image:"perslan.jpg"
-    },
-
-    {
-        name:"آریانا",
-        price:"۱۹ میلیون تومان",
-        image:"aryana.jpg"
-    },
-
-    {
-        name:"رومینا",
-        price:"۲۱ میلیون تومان",
-        image:"romina.jpg"
-    },
-
-    {
-        name:"آترین",
-        price:"۲۳ میلیون تومان",
-        image:"atrin.jpg"
-    },
-
-    {
-        name:"مارال",
-        price:"۲۵ میلیون تومان",
-        image:"maral.jpg"
-    },
-
-    {
-        name:"دالیا",
-        price:"۲۷ میلیون تومان",
-        image:"dalia.jpg"
-    },
-
-    {
-        name:"سلین",
-        price:"۲۹ میلیون تومان",
-        image:"selin.jpg"
-    },
-
-    {
-        name:"ویانا",
-        price:"۳۱ میلیون تومان",
-        image:"viana.jpg"
-    },
-
-    {
-        name:"آلما",
-        price:"۳۲ میلیون تومان",
-        image:"alma.jpg"
-    },
-
-    {
-        name:"کارینا",
-        price:"۳۴ میلیون تومان",
-        image:"karina.jpg"
-    },
-
-    {
-        name:"نورا",
-        price:"۳۵ میلیون تومان",
-        image:"nora.jpg"
-    }
-
-];
-
-
-const productList =
-document.getElementById("productList");
-
-
-products.forEach((product,index)=>{
-
-    productList.innerHTML += `
-
-        <div class="card"
-             onclick="showProduct(${index})">
-
-            <img src="${product.image}"
-                 alt="${product.name}">
-
-            <div class="card-info">
-
-                <h3>
-                    روشویی ${product.name}
-                </h3>
-
-                <div class="price">
-                    ${product.price}
-                </div>
-
-                <button class="buy-btn">
-                    مشاهده محصول
-                </button>
-
-            </div>
-
-        </div>
-
-    `;
-
-});
-
-
-let selectedProduct = null;
-
-
-function showProduct(index){
-
-    selectedProduct = products[index];
-
-    document.getElementById("modalImage").src =
-        selectedProduct.image;
-
-    document.getElementById("modalName").innerText =
-        "روشویی " + selectedProduct.name;
-
-    document.getElementById("modalPrice").innerText =
-        selectedProduct.price;
-
-    document.getElementById("modalSpecs").innerHTML = `
-
-        <p>✓ تولید دست‌ساز</p>
-        <p>✓ امکان ساخت در طرح دلخواه</p>
-        <p>✓ امکان سفارش در ابعاد دلخواه</p>
-        <p>✓ طراحی اختصاصی برای مشتری</p>
-
-    `;
-
-    document.getElementById("productModal")
-        .style.display="flex";
-
-}
-
-
-function closeModal(){
-
-    document.getElementById("productModal")
-        .style.display="none";
-
-}
-
-
-function openPayment(){
-
-    closeModal();
-
-    document.getElementById("paymentPrice").innerText =
-        selectedProduct.price;
-
-    document.getElementById("paymentModal")
-        .style.display="flex";
-
-}
-
-
-function closePayment(){
-
-    document.getElementById("paymentModal")
-        .style.display="none";
-
-}
-
-
-function copyCard(){
-
-    navigator.clipboard.writeText(
-        "6104337451668311"
-    );
-
-    alert("شماره کارت کپی شد ✓");
-
-}
-
-
-window.onclick = function(event){
-
-    if(event.target.classList.contains("modal")){
-
-        event.target.style.display="none";
-
-    }
-
-}
-
-</script>
 
 </body>
 </html>

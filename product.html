@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>محصول | آذین سنگ</title>
+
+<style>
+
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:Tahoma,Arial,sans-serif;
+    background:#f4f1eb;
+}
+
+header{
+    background:white;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.logo span{color:#a77b35}
+
+.back{
+    text-decoration:none;
+    color:#555;
+}
+
+.product{
+    max-width:1000px;
+    margin:60px auto;
+    padding:25px;
+    background:white;
+    border-radius:22px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+}
+
+.product img{
+    width:100%;
+    border-radius:18px;
+}
+
+.info{
+    padding:20px;
+}
+
+.info h1{
+    font-size:35px;
+}
+
+.price{
+    color:#a06d20;
+    font-size:25px;
+    font-weight:bold;
+    margin:20px 0;
+}
+
+.description{
+    line-height:2.2;
+    color:#666;
+}
+
+.buy{
+    display:block;
+    text-align:center;
+    background:#222;
+    color:white;
+    text-decoration:none;
+    padding:16px;
+    border-radius:12px;
+    margin-top:30px;
+}
+
+@media(max-width:700px){
+    .product{
+        grid-template-columns:1fr;
+        margin:20px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+آذین <span>سنگ</span>
+</div>
+
+<a href="products.html" class="back">
+← نمونه‌کارها
+</a>
+
+</header>
+
+
+<div class="product">
+
+<img id="image">
+
+<div class="info">
+
+<h1 id="name"></h1>
+
+<div class="price" id="price"></div>
+
+<div class="description">
+
+<p>✓ روشویی دست‌ساز</p>
+
+<p>✓ قابلیت ساخت در طرح دلخواه</p>
+
+<p>✓ قابلیت سفارش در ابعاد دلخواه</p>
+
+<p>✓ طراحی و ساخت اختصاصی</p>
+
+<p>✓ مناسب برای دکوراسیون‌های مدرن و خاص</p>
+
+</div>
+
+<a href="#" id="buy" class="buy">
+خرید این محصول
+</a>
+
+</div>
+
+</div>
+
+
+<script>
+
+const products={
+
+arsila:{
+name:"ارسیلا",
+price:"۱۵ میلیون تومان",
+image:"images/arsila.jpg"
+},
+
+perslan:{
+name:"پرسلان",
+price:"۱۷ میلیون تومان",
+image:"images/perslan.jpg"
+},
+
+aryana:{
+name:"آریانا",
+price:"۱۹ میلیون تومان",
+image:"images/aryana.jpg"
+},
+
+romina:{
+name:"رومینا",
+price:"۲۱ میلیون تومان",
+image:"images/romina.jpg"
+},
+
+atrin:{
+name:"آترین",
+price:"۲۳ میلیون تومان",
+image:"images/atrin.jpg"
+},
+
+maral:{
+name:"مارال",
+price:"۲۵ میلیون تومان",
+image:"images/maral.jpg"
+},
+
+dalia:{
+name:"دالیا",
+price:"۲۷ میلیون تومان",
+image:"images/dalia.jpg"
+},
+
+selin:{
+name:"سلین",
+price:"۲۹ میلیون تومان",
+image:"images/selin.jpg"
+},
+
+viana:{
+name:"ویانا",
+price:"۳۱ میلیون تومان",
+image:"images/viana.jpg"
+},
+
+alma:{
+name:"آلما",
+price:"۳۲ میلیون تومان",
+image:"images/alma.jpg"
+},
+
+karina:{
+name:"کارینا",
+price:"۳۴ میلیون تومان",
+image:"images/karina.jpg"
+},
+
+nora:{
+name:"نورا",
+price:"۳۵ میلیون تومان",
+image:"images/nora.jpg"
+}
+
+};
+
+
+const params =
+new URLSearchParams(location.search);
+
+const key =
+params.get("name") || "arsila";
+
+const product =
+products[key];
+
+document.getElementById("name")
+.innerText="روشویی "+product.name;
+
+document.getElementById("price")
+.innerText=product.price;
+
+document.getElementById("image")
+.src=product.image;
+
+document.getElementById("buy")
+.href=
+"payment.html?name="+key;
+
+</script>
+
+</body>
+</html>

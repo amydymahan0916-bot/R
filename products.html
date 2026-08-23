@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>نمونه کارها | آذین سنگ</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:Tahoma,Arial,sans-serif;
+    background:#f4f1eb;
+    color:#222;
+}
+
+header{
+    background:#fff;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 15px #0001;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.logo span{color:#a77b35}
+
+.back{
+    text-decoration:none;
+    color:#555;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:50px 20px;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.title h1{
+    font-size:35px;
+}
+
+.title p{
+    color:#777;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 25px #00000012;
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.info{
+    padding:18px;
+}
+
+.info h2{
+    margin:0 0 10px;
+}
+
+.price{
+    color:#a06d20;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    padding:13px;
+    border-radius:10px;
+    background:#222;
+    color:white;
+}
+
+@media(max-width:800px){
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:520px){
+    .products{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        آذین <span>سنگ</span>
+    </div>
+
+    <a href="index.html" class="back">
+        ← بازگشت
+    </a>
+
+</header>
+
+<div class="container">
+
+    <div class="title">
+
+        <h1>نمونه‌کارهای آذین سنگ</h1>
+
+        <p>
+            برای مشاهده مشخصات هر محصول روی آن بزنید.
+        </p>
+
+    </div>
+
+    <div class="products">
+
+        <div class="card">
+            <img src="images/arsila.jpg">
+            <div class="info">
+                <h2>ارسیلا</h2>
+                <div class="price">۱۵ میلیون تومان</div>
+                <a href="product.html?name=arsila" class="btn">
+                    مشاهده محصول
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/perslan.jpg">
+            <div class="info">
+                <h2>پرسلان</h2>
+                <div class="price">۱۷ میلیون تومان</div>
+                <a href="product.html?name=perslan" class="btn">
+                    مشاهده محصول
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/aryana.jpg">
+            <div class="info">
+                <h2>آریانا</h2>
+                <div class="price">۱۹ میلیون تومان</div>
+                <a href="product.html?name=aryana" class="btn">
+                    مشاهده محصول
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/romina.jpg">
+            <div class="info">
+                <h2>رومینا</h2>
+                <div class="price">۲۱ میلیون تومان</div>
+                <a href="product.html?name=romina" class="btn">
+                    مشاهده محصول
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/atrin.jpg">
+            <div class="info">
+                <h2>آترین</h2>
+                <div class="price">۲۳ میلیون تومان</div>
+                <a href="product.html?name=atrin" class="btn">
+                    مشاهده محصول
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/maral.jpg">
+            <div class="info">
+                <h2>مارال</h2>
+                <div class="price">۲۵ میلیون تومان</div>
+                <a href="product.html?name=maral" class="btn">
+                    مشاهده محصول
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/dalia.jpg">
+            <div class="info">
+                <h2>دالیا</h2>
+                <div class="price">۲۷ میلیون تومان</div>
+                <a href="product.html?name=dalia" class="btn">
+                    مشاهده محصول
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/selin.jpg">
+            <div class="info">
+                <h2>سلین</h2>
+                <div class="price">۲۹ میلیون تومان</div>
+                <a href="product.html?name=selin" class="btn">
+                    مشاهده محصول
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/viana.jpg">
+            <div class="info">
+                <h2>ویانا</h2>
+                <div class="price">۳۱ میلیون تومان</div>
+                <a href="product.html?name=viana" class="btn">
+                    مشاهده محصول
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/alma.jpg">
+            <div class="info">
+                <h2>آلما</h2>
+                <div class="price">۳۲ میلیون تومان</div>
+                <a href="product.html?name=alma" class="btn">
+                    مشاهده محصول
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/karina.jpg">
+            <div class="info">
+                <h2>کارینا</h2>
+                <div class="price">۳۴ میلیون تومان</div>
+                <a href="product.html?name=karina" class="btn">
+                    مشاهده محصول
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/nora.jpg">
+            <div class="info">
+                <h2>نورا</h2>
+                <div class="price">۳۵ میلیون تومان</div>
+                <a href="product.html?name=nora" class="btn">
+                    مشاهده محصول
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

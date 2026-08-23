@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>پرداخت | آذین سنگ</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Tahoma,Arial;
+background:#f4f1eb;
+}
+
+.box{
+max-width:550px;
+margin:60px auto;
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+.card{
+background:#f4f1eb;
+padding:20px;
+border-radius:15px;
+margin:25px 0;
+}
+
+.number{
+direction:ltr;
+font-size:21px;
+font-weight:bold;
+background:white;
+padding:15px;
+border-radius:10px;
+margin:10px 0;
+}
+
+button,
+.call{
+width:100%;
+border:0;
+padding:15px;
+border-radius:11px;
+cursor:pointer;
+font-size:15px;
+}
+
+button{
+background:#b88942;
+color:white;
+}
+
+.call{
+display:block;
+background:#222;
+color:white;
+text-decoration:none;
+margin-top:15px;
+}
+
+.back{
+display:block;
+margin-top:20px;
+color:#555;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>پرداخت سفارش</h1>
+
+<h2 id="product"></h2>
+
+<div class="card">
+
+<p>مبلغ:</p>
+
+<h2 id="price"></h2>
+
+<hr>
+
+<p>شماره کارت</p>
+
+<div class="number">
+6104 3374 5166 8311
+</div>
+
+<p>
+<strong>کامران امیدی</strong>
+</p>
+
+<p>
+بانک ملت
+</p>
+
+<button onclick="copyCard()">
+کپی شماره کارت
+</button>
+
+</div>
+
+<p>
+پس از انتقال وجه، برای ثبت سفارش با فروشگاه تماس بگیرید.
+</p>
+
+<a class="call" href="tel:09129374866">
+پرداخت کردم — تماس با فروشگاه
+</a>
+
+<a href="products.html" class="back">
+بازگشت به محصولات
+</a>
+
+</div>
+
+
+<script>
+
+const data={
+
+arsila:["ارسیلا","۱۵ میلیون تومان"],
+perslan:["پرسلان","۱۷ میلیون تومان"],
+aryana:["آریانا","۱۹ میلیون تومان"],
+romina:["رومینا","۲۱ میلیون تومان"],
+atrin:["آترین","۲۳ میلیون تومان"],
+maral:["مارال","۲۵ میلیون تومان"],
+dalia:["دالیا","۲۷ میلیون تومان"],
+selin:["سلین","۲۹ میلیون تومان"],
+viana:["ویانا","۳۱ میلیون تومان"],
+alma:["آلما","۳۲ میلیون تومان"],
+karina:["کارینا","۳۴ میلیون تومان"],
+nora:["نورا","۳۵ میلیون تومان"]
+
+};
+
+const key =
+new URLSearchParams(location.search).get("name")
+||"arsila";
+
+document.getElementById("product")
+.innerText="روشویی "+data[key][0];
+
+document.getElementById("price")
+.innerText=data[key][1];
+
+function copyCard(){
+
+navigator.clipboard.writeText(
+"6104337451668311"
+);
+
+alert("شماره کارت کپی شد ✓");
+
+}
+
+</script>
+
+</body>
+</html>
