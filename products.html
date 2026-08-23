@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>نمونه‌کارها | آذین سنگ</title>
 
 <style>
+
 *{
+    margin:0;
+    padding:0;
     box-sizing:border-box;
 }
 
 body{
-    margin:0;
     font-family:Tahoma,Arial,sans-serif;
-    background:#f4f1eb;
-    color:#222;
+    background:#111;
+    color:#fff;
+    overflow-x:hidden;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
+
 header{
-    background:#fff;
-    height:70px;
-    padding:0 5%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    height:75px;
+
+    padding:0 6%;
+
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    box-shadow:0 2px 15px rgba(0,0,0,.08);
+    justify-content:space-between;
+
+    background:rgba(15,15,15,.88);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .logo{
@@ -35,569 +51,1165 @@ header{
 }
 
 .logo span{
-    color:#b18443;
+    color:#c99b54;
 }
 
 .back{
     text-decoration:none;
-    color:#444;
-    font-size:14px;
+    color:#ddd;
+
+    padding:10px 17px;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:25px;
+
+    font-size:13px;
+
+    transition:.3s;
 }
 
-/* MAIN */
-.container{
-    width:100%;
-    padding:40px 3%;
+.back:hover{
+    border-color:#c99b54;
+    color:#c99b54;
 }
 
-.title{
+/* ================= PAGE TITLE ================= */
+
+.page-head{
     text-align:center;
-    margin-bottom:35px;
+
+    padding:70px 20px 45px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #27221b,
+            #111 65%
+        );
 }
 
-.title h1{
-    font-size:32px;
-    margin:0 0 12px;
+.small{
+    color:#c99b54;
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
+    margin-bottom:15px;
 }
 
-.title p{
-    color:#777;
-    margin:0;
-}
+.page-head h1{
+    font-size:40px;
 
-/* PRODUCTS */
-.products{
-    width:100%;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-}
-
-/* CARD */
-.card{
-    background:#fff;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-    transition:.25s;
-    min-width:0;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-}
-
-/* IMAGE */
-.card img{
-    display:block;
-    width:100%;
-    height:280px;
-    object-fit:cover;
-    background:#ddd;
-}
-
-/* INFO */
-.info{
-    padding:17px;
-}
-
-.info h2{
-    margin:0 0 10px;
-    font-size:20px;
-}
-
-.price{
-    color:#a06d20;
-    font-weight:bold;
-    font-size:16px;
     margin-bottom:14px;
 }
 
-.btn{
-    display:block;
-    width:100%;
-    padding:12px;
-    background:#222;
-    color:#fff;
-    text-decoration:none;
-    text-align:center;
-    border-radius:10px;
+.page-head p{
+    color:#999;
+
     font-size:14px;
-    transition:.2s;
+}
+
+/* ================= PRODUCTS ================= */
+
+.container{
+    width:100%;
+
+    padding:20px 5% 80px;
+}
+
+.products{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:25px;
+
+}
+
+/* ================= CARD ================= */
+
+.card{
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1d1d1d,
+            #141414
+        );
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    border:1px solid
+        rgba(255,255,255,.07);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.3);
+
+    transition:.35s;
+
+    animation:show .7s ease both;
+}
+
+.card:hover{
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(201,155,84,.55);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.5);
+
+}
+
+/* ================= IMAGE ================= */
+
+.image-box{
+
+    position:relative;
+
+    overflow:hidden;
+
+    height:300px;
+
+    background:#222;
+
+}
+
+.image-box img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.5s;
+
+}
+
+.card:hover .image-box img{
+
+    transform:scale(1.07);
+
+}
+
+/* HANDMADE LABEL */
+
+.badge{
+
+    position:absolute;
+
+    top:14px;
+
+    right:14px;
+
+    background:
+        rgba(0,0,0,.7);
+
+    backdrop-filter:blur(8px);
+
+    color:#d6ad6a;
+
+    border:1px solid
+        rgba(201,155,84,.4);
+
+    padding:7px 11px;
+
+    border-radius:20px;
+
+    font-size:10px;
+
+}
+
+/* ================= INFO ================= */
+
+.info{
+
+    padding:20px;
+
+}
+
+.info-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin-bottom:12px;
+
+}
+
+.info h2{
+
+    font-size:20px;
+
+}
+
+.price{
+
+    color:#d2a65c;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+}
+
+.description{
+
+    color:#888;
+
+    font-size:12px;
+
+    line-height:2;
+
+    margin-bottom:17px;
+
+}
+
+/* ================= BUTTON ================= */
+
+.btn{
+
+    display:block;
+
+    width:100%;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    padding:13px;
+
+    border-radius:11px;
+
+    color:#111;
+
+    font-weight:bold;
+
+    font-size:13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e1bd78,
+            #a97631
+        );
+
+    transition:.3s;
+
 }
 
 .btn:hover{
-    background:#b18443;
+
+    box-shadow:
+        0 8px 25px
+        rgba(201,155,84,.25);
+
 }
 
-/* MOBILE
-   همچنان ۳ ستون
-*/
-@media(max-width:600px){
+/* ================= FOOTER ================= */
 
-    .container{
-        padding:25px 8px;
+footer{
+
+    padding:35px 20px;
+
+    text-align:center;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.07);
+
+    color:#777;
+
+    font-size:12px;
+
+}
+
+footer strong{
+
+    color:#c99b54;
+
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes show{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(25px);
+
     }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width:850px){
 
     .products{
-        grid-template-columns:repeat(3,1fr);
-        gap:8px;
+
+        grid-template-columns:
+            repeat(3,minmax(0,1fr));
+
+        gap:12px;
+
     }
 
-    .card{
-        border-radius:10px;
+    .container{
+
+        padding-left:2%;
+        padding-right:2%;
+
     }
 
-    .card img{
-        height:125px;
+    .image-box{
+
+        height:190px;
+
     }
 
     .info{
-        padding:8px;
+
+        padding:11px;
+
     }
 
     .info h2{
-        font-size:12px;
-        margin-bottom:5px;
+
+        font-size:14px;
+
     }
 
     .price{
+
+        font-size:11px;
+
+    }
+
+    .description{
+
         font-size:9px;
-        margin-bottom:7px;
+
     }
 
     .btn{
+
         font-size:9px;
-        padding:8px 2px;
-        border-radius:7px;
-    }
 
-    .title h1{
-        font-size:24px;
-    }
+        padding:9px 3px;
 
-    .title p{
-        font-size:12px;
     }
 
 }
+
+/* ================= MOBILE ================= */
+
+@media(max-width:500px){
+
+    header{
+
+        height:65px;
+
+        padding:0 15px;
+
+    }
+
+    .logo{
+
+        font-size:19px;
+
+    }
+
+    .back{
+
+        font-size:10px;
+
+        padding:8px 11px;
+
+    }
+
+    .page-head{
+
+        padding:50px 15px 35px;
+
+    }
+
+    .page-head h1{
+
+        font-size:27px;
+
+    }
+
+    .page-head p{
+
+        font-size:11px;
+
+    }
+
+    .products{
+
+        grid-template-columns:
+            repeat(3,minmax(0,1fr));
+
+        gap:7px;
+
+    }
+
+    .image-box{
+
+        height:125px;
+
+    }
+
+    .badge{
+
+        top:5px;
+
+        right:5px;
+
+        font-size:7px;
+
+        padding:4px 5px;
+
+    }
+
+    .info{
+
+        padding:7px;
+
+    }
+
+    .info-top{
+
+        display:block;
+
+        margin-bottom:5px;
+
+    }
+
+    .info h2{
+
+        font-size:11px;
+
+        margin-bottom:4px;
+
+    }
+
+    .price{
+
+        font-size:8px;
+
+    }
+
+    .description{
+
+        font-size:7px;
+
+        line-height:1.6;
+
+        margin-bottom:6px;
+
+    }
+
+    .btn{
+
+        font-size:7px;
+
+        padding:7px 2px;
+
+        border-radius:6px;
+
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
-<!-- HEADER -->
+
+<!-- ================= HEADER ================= -->
 
 <header>
 
     <div class="logo">
+
         آذین <span>سنگ</span>
+
     </div>
 
-    <a href="index.html" class="back">
+
+    <a
+        href="index.html"
+        class="back">
+
         ← صفحه اصلی
+
     </a>
 
 </header>
 
 
-<!-- CONTENT -->
 
-<div class="container">
+<!-- ================= TITLE ================= -->
 
-    <div class="title">
+<section class="page-head">
 
-        <h1>
-            نمونه‌کارهای آذین سنگ
-        </h1>
+    <div class="small">
+        AZIN SANG COLLECTION
+    </div>
 
-        <p>
-            برای مشاهده مشخصات و قیمت، محصول موردنظر را انتخاب کنید.
-        </p>
+    <h1>
+        نمونه‌کارها
+    </h1>
+
+    <p>
+        مجموعه‌ای از روشویی‌های دست‌ساز آذین سنگ
+    </p>
+
+</section>
+
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<main class="container">
+
+<div class="products">
+
+
+<!-- 1 -->
+
+<div class="card">
+
+    <div class="image-box">
+
+        <img
+            src="arsila.jpg"
+            alt="روشویی ارسیلا">
+
+        <div class="badge">
+            دست‌ساز
+        </div>
 
     </div>
 
+    <div class="info">
 
-    <!-- PRODUCTS -->
+        <div class="info-top">
 
-    <div class="products">
+            <h2>
+                ارسیلا
+            </h2>
 
-
-        <!-- 1 -->
-
-        <div class="card">
-
-            <img
-                src="arsila.jpg"
-                alt="روشویی ارسیلا">
-
-            <div class="info">
-
-                <h2>
-                    ارسیلا
-                </h2>
-
-                <div class="price">
-                    ۱۵ میلیون تومان
-                </div>
-
-                <a
-                    href="product.html?name=arsila"
-                    class="btn">
-
-                    مشاهده محصول
-
-                </a>
-
+            <div class="price">
+                ۱۵ میلیون
             </div>
 
         </div>
 
-
-        <!-- 2 -->
-
-        <div class="card">
-
-            <img
-                src="perslan.jpg"
-                alt="روشویی پرسلان">
-
-            <div class="info">
-
-                <h2>
-                    پرسلان
-                </h2>
-
-                <div class="price">
-                    ۱۷ میلیون تومان
-                </div>
-
-                <a
-                    href="product.html?name=perslan"
-                    class="btn">
-
-                    مشاهده محصول
-
-                </a>
-
-            </div>
-
+        <div class="description">
+            طراحی خاص و قابل سفارش
         </div>
 
+        <a
+            href="product.html?name=arsila"
+            class="btn">
 
-        <!-- 3 -->
+            مشاهده جزئیات
 
-        <div class="card">
-
-            <img
-                src="aryana.jpg"
-                alt="روشویی آریانا">
-
-            <div class="info">
-
-                <h2>
-                    آریانا
-                </h2>
-
-                <div class="price">
-                    ۱۹ میلیون تومان
-                </div>
-
-                <a
-                    href="product.html?name=aryana"
-                    class="btn">
-
-                    مشاهده محصول
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- 4 -->
-
-        <div class="card">
-
-            <img
-                src="romina.jpg"
-                alt="روشویی رومینا">
-
-            <div class="info">
-
-                <h2>
-                    رومینا
-                </h2>
-
-                <div class="price">
-                    ۲۱ میلیون تومان
-                </div>
-
-                <a
-                    href="product.html?name=romina"
-                    class="btn">
-
-                    مشاهده محصول
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- 5 -->
-
-        <div class="card">
-
-            <img
-                src="atrin.jpg"
-                alt="روشویی آترین">
-
-            <div class="info">
-
-                <h2>
-                    آترین
-                </h2>
-
-                <div class="price">
-                    ۲۳ میلیون تومان
-                </div>
-
-                <a
-                    href="product.html?name=atrin"
-                    class="btn">
-
-                    مشاهده محصول
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- 6 -->
-
-        <div class="card">
-
-            <img
-                src="maral.jpg"
-                alt="روشویی مارال">
-
-            <div class="info">
-
-                <h2>
-                    مارال
-                </h2>
-
-                <div class="price">
-                    ۲۵ میلیون تومان
-                </div>
-
-                <a
-                    href="product.html?name=maral"
-                    class="btn">
-
-                    مشاهده محصول
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- 7 -->
-
-        <div class="card">
-
-            <img
-                src="dalia.jpg"
-                alt="روشویی دالیا">
-
-            <div class="info">
-
-                <h2>
-                    دالیا
-                </h2>
-
-                <div class="price">
-                    ۲۷ میلیون تومان
-                </div>
-
-                <a
-                    href="product.html?name=dalia"
-                    class="btn">
-
-                    مشاهده محصول
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- 8 -->
-
-        <div class="card">
-
-            <img
-                src="selin.jpg"
-                alt="روشویی سلین">
-
-            <div class="info">
-
-                <h2>
-                    سلین
-                </h2>
-
-                <div class="price">
-                    ۲۹ میلیون تومان
-                </div>
-
-                <a
-                    href="product.html?name=selin"
-                    class="btn">
-
-                    مشاهده محصول
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- 9 -->
-
-        <div class="card">
-
-            <img
-                src="viana.jpg"
-                alt="روشویی ویانا">
-
-            <div class="info">
-
-                <h2>
-                    ویانا
-                </h2>
-
-                <div class="price">
-                    ۳۱ میلیون تومان
-                </div>
-
-                <a
-                    href="product.html?name=viana"
-                    class="btn">
-
-                    مشاهده محصول
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- 10 -->
-
-        <div class="card">
-
-            <img
-                src="alma.jpg"
-                alt="روشویی آلما">
-
-            <div class="info">
-
-                <h2>
-                    آلما
-                </h2>
-
-                <div class="price">
-                    ۳۲ میلیون تومان
-                </div>
-
-                <a
-                    href="product.html?name=alma"
-                    class="btn">
-
-                    مشاهده محصول
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- 11 -->
-
-        <div class="card">
-
-            <img
-                src="karina.jpg"
-                alt="روشویی کارینا">
-
-            <div class="info">
-
-                <h2>
-                    کارینا
-                </h2>
-
-                <div class="price">
-                    ۳۴ میلیون تومان
-                </div>
-
-                <a
-                    href="product.html?name=karina"
-                    class="btn">
-
-                    مشاهده محصول
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- 12 -->
-
-        <div class="card">
-
-            <img
-                src="nora.jpg"
-                alt="روشویی نورا">
-
-            <div class="info">
-
-                <h2>
-                    نورا
-                </h2>
-
-                <div class="price">
-                    ۳۵ میلیون تومان
-                </div>
-
-                <a
-                    href="product.html?name=nora"
-                    class="btn">
-
-                    مشاهده محصول
-
-                </a>
-
-            </div>
-
-        </div>
-
+        </a>
 
     </div>
 
 </div>
 
+
+
+<!-- 2 -->
+
+<div class="card">
+
+    <div class="image-box">
+
+        <img
+            src="perslan.jpg"
+            alt="روشویی پرسلان">
+
+        <div class="badge">
+            دست‌ساز
+        </div>
+
+    </div>
+
+    <div class="info">
+
+        <div class="info-top">
+
+            <h2>
+                پرسلان
+            </h2>
+
+            <div class="price">
+                ۱۷ میلیون
+            </div>
+
+        </div>
+
+        <div class="description">
+            طراحی خاص و قابل سفارش
+        </div>
+
+        <a
+            href="product.html?name=perslan"
+            class="btn">
+
+            مشاهده جزئیات
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- 3 -->
+
+<div class="card">
+
+    <div class="image-box">
+
+        <img
+            src="aryana.jpg"
+            alt="روشویی آریانا">
+
+        <div class="badge">
+            دست‌ساز
+        </div>
+
+    </div>
+
+    <div class="info">
+
+        <div class="info-top">
+
+            <h2>
+                آریانا
+            </h2>
+
+            <div class="price">
+                ۱۹ میلیون
+            </div>
+
+        </div>
+
+        <div class="description">
+            طراحی خاص و قابل سفارش
+        </div>
+
+        <a
+            href="product.html?name=aryana"
+            class="btn">
+
+            مشاهده جزئیات
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- 4 -->
+
+<div class="card">
+
+    <div class="image-box">
+
+        <img
+            src="romina.jpg"
+            alt="روشویی رومینا">
+
+        <div class="badge">
+            دست‌ساز
+        </div>
+
+    </div>
+
+    <div class="info">
+
+        <div class="info-top">
+
+            <h2>
+                رومینا
+            </h2>
+
+            <div class="price">
+                ۲۱ میلیون
+            </div>
+
+        </div>
+
+        <div class="description">
+            طراحی خاص و قابل سفارش
+        </div>
+
+        <a
+            href="product.html?name=romina"
+            class="btn">
+
+            مشاهده جزئیات
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- 5 -->
+
+<div class="card">
+
+    <div class="image-box">
+
+        <img
+            src="atrin.jpg"
+            alt="روشویی آترین">
+
+        <div class="badge">
+            دست‌ساز
+        </div>
+
+    </div>
+
+    <div class="info">
+
+        <div class="info-top">
+
+            <h2>
+                آترین
+            </h2>
+
+            <div class="price">
+                ۲۳ میلیون
+            </div>
+
+        </div>
+
+        <div class="description">
+            طراحی خاص و قابل سفارش
+        </div>
+
+        <a
+            href="product.html?name=atrin"
+            class="btn">
+
+            مشاهده جزئیات
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- 6 -->
+
+<div class="card">
+
+    <div class="image-box">
+
+        <img
+            src="maral.jpg"
+            alt="روشویی مارال">
+
+        <div class="badge">
+            دست‌ساز
+        </div>
+
+    </div>
+
+    <div class="info">
+
+        <div class="info-top">
+
+            <h2>
+                مارال
+            </h2>
+
+            <div class="price">
+                ۲۵ میلیون
+            </div>
+
+        </div>
+
+        <div class="description">
+            طراحی خاص و قابل سفارش
+        </div>
+
+        <a
+            href="product.html?name=maral"
+            class="btn">
+
+            مشاهده جزئیات
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- 7 -->
+
+<div class="card">
+
+    <div class="image-box">
+
+        <img
+            src="dalia.jpg"
+            alt="روشویی دالیا">
+
+        <div class="badge">
+            دست‌ساز
+        </div>
+
+    </div>
+
+    <div class="info">
+
+        <div class="info-top">
+
+            <h2>
+                دالیا
+            </h2>
+
+            <div class="price">
+                ۲۷ میلیون
+            </div>
+
+        </div>
+
+        <div class="description">
+            طراحی خاص و قابل سفارش
+        </div>
+
+        <a
+            href="product.html?name=dalia"
+            class="btn">
+
+            مشاهده جزئیات
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- 8 -->
+
+<div class="card">
+
+    <div class="image-box">
+
+        <img
+            src="selin.jpg"
+            alt="روشویی سلین">
+
+        <div class="badge">
+            دست‌ساز
+        </div>
+
+    </div>
+
+    <div class="info">
+
+        <div class="info-top">
+
+            <h2>
+                سلین
+            </h2>
+
+            <div class="price">
+                ۲۹ میلیون
+            </div>
+
+        </div>
+
+        <div class="description">
+            طراحی خاص و قابل سفارش
+        </div>
+
+        <a
+            href="product.html?name=selin"
+            class="btn">
+
+            مشاهده جزئیات
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- 9 -->
+
+<div class="card">
+
+    <div class="image-box">
+
+        <img
+            src="viana.jpg"
+            alt="روشویی ویانا">
+
+        <div class="badge">
+            دست‌ساز
+        </div>
+
+    </div>
+
+    <div class="info">
+
+        <div class="info-top">
+
+            <h2>
+                ویانا
+            </h2>
+
+            <div class="price">
+                ۳۱ میلیون
+            </div>
+
+        </div>
+
+        <div class="description">
+            طراحی خاص و قابل سفارش
+        </div>
+
+        <a
+            href="product.html?name=viana"
+            class="btn">
+
+            مشاهده جزئیات
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- 10 -->
+
+<div class="card">
+
+    <div class="image-box">
+
+        <img
+            src="alma.jpg"
+            alt="روشویی آلما">
+
+        <div class="badge">
+            دست‌ساز
+        </div>
+
+    </div>
+
+    <div class="info">
+
+        <div class="info-top">
+
+            <h2>
+                آلما
+            </h2>
+
+            <div class="price">
+                ۳۲ میلیون
+            </div>
+
+        </div>
+
+        <div class="description">
+            طراحی خاص و قابل سفارش
+        </div>
+
+        <a
+            href="product.html?name=alma"
+            class="btn">
+
+            مشاهده جزئیات
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- 11 -->
+
+<div class="card">
+
+    <div class="image-box">
+
+        <img
+            src="karina.jpg"
+            alt="روشویی کارینا">
+
+        <div class="badge">
+            دست‌ساز
+        </div>
+
+    </div>
+
+    <div class="info">
+
+        <div class="info-top">
+
+            <h2>
+                کارینا
+            </h2>
+
+            <div class="price">
+                ۳۴ میلیون
+            </div>
+
+        </div>
+
+        <div class="description">
+            طراحی خاص و قابل سفارش
+        </div>
+
+        <a
+            href="product.html?name=karina"
+            class="btn">
+
+            مشاهده جزئیات
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- 12 -->
+
+<div class="card">
+
+    <div class="image-box">
+
+        <img
+            src="nora.jpg"
+            alt="روشویی نورا">
+
+        <div class="badge">
+            دست‌ساز
+        </div>
+
+    </div>
+
+    <div class="info">
+
+        <div class="info-top">
+
+            <h2>
+                نورا
+            </h2>
+
+            <div class="price">
+                ۳۵ میلیون
+            </div>
+
+        </div>
+
+        <div class="description">
+            طراحی خاص و قابل سفارش
+        </div>
+
+        <a
+            href="product.html?name=nora"
+            class="btn">
+
+            مشاهده جزئیات
+
+        </a>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <strong>
+        آذین سنگ
+    </strong>
+
+    <br><br>
+
+    روشویی‌های سنگی دست‌ساز
+    <br>
+    بندر ماهشهر
+
+</footer>
+
+
 </body>
-</html>
+        </html>
