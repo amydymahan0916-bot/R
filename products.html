@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>نمونه کارها | آذین سنگ</title>
+<title>نمونه‌کارها | آذین سنگ</title>
 
 <style>
 *{
@@ -18,13 +18,15 @@ body{
     color:#222;
 }
 
+/* HEADER */
 header{
     background:#fff;
-    padding:18px 5%;
+    height:70px;
+    padding:0 5%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    box-shadow:0 2px 15px #0001;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
 }
 
 .logo{
@@ -33,14 +35,16 @@ header{
 }
 
 .logo span{
-    color:#a77b35;
+    color:#b18443;
 }
 
 .back{
     text-decoration:none;
-    color:#555;
+    color:#444;
+    font-size:14px;
 }
 
+/* MAIN */
 .container{
     width:100%;
     padding:40px 3%;
@@ -53,68 +57,82 @@ header{
 
 .title h1{
     font-size:32px;
-    margin-bottom:10px;
+    margin:0 0 12px;
 }
 
 .title p{
     color:#777;
+    margin:0;
 }
 
-/* دقیقاً ۳ ستون */
+/* PRODUCTS */
 .products{
-    display:grid;
-    grid-template-columns:repeat(3, minmax(0, 1fr));
-    gap:20px;
     width:100%;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
 }
 
+/* CARD */
 .card{
-    min-width:0;
-    background:white;
-    border-radius:16px;
+    background:#fff;
+    border-radius:18px;
     overflow:hidden;
-    box-shadow:0 7px 25px rgba(0,0,0,.08);
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
     transition:.25s;
+    min-width:0;
 }
 
 .card:hover{
     transform:translateY(-5px);
 }
 
+/* IMAGE */
 .card img{
-    width:100%;
-    height:260px;
     display:block;
+    width:100%;
+    height:280px;
     object-fit:cover;
     background:#ddd;
 }
 
+/* INFO */
 .info{
-    padding:15px;
+    padding:17px;
 }
 
 .info h2{
     margin:0 0 10px;
-    font-size:19px;
+    font-size:20px;
 }
 
 .price{
     color:#a06d20;
     font-weight:bold;
-    margin-bottom:13px;
+    font-size:16px;
+    margin-bottom:14px;
 }
 
 .btn{
     display:block;
-    text-align:center;
-    text-decoration:none;
+    width:100%;
     padding:12px;
-    border-radius:10px;
     background:#222;
     color:#fff;
+    text-decoration:none;
+    text-align:center;
+    border-radius:10px;
+    font-size:14px;
+    transition:.2s;
 }
 
-/* موبایل هم همچنان ۳ ستون */
+.btn:hover{
+    background:#b18443;
+}
+
+/* MOBILE
+   همچنان ۳ ستون
+*/
 @media(max-width:600px){
 
     .container{
@@ -122,7 +140,7 @@ header{
     }
 
     .products{
-        grid-template-columns:repeat(3, minmax(0,1fr));
+        grid-template-columns:repeat(3,1fr);
         gap:8px;
     }
 
@@ -131,7 +149,7 @@ header{
     }
 
     .card img{
-        height:120px;
+        height:125px;
     }
 
     .info{
@@ -140,27 +158,35 @@ header{
 
     .info h2{
         font-size:12px;
-        margin-bottom:6px;
+        margin-bottom:5px;
     }
 
     .price{
-        font-size:10px;
+        font-size:9px;
         margin-bottom:7px;
     }
 
     .btn{
         font-size:9px;
-        padding:8px 3px;
+        padding:8px 2px;
+        border-radius:7px;
     }
 
     .title h1{
         font-size:24px;
     }
+
+    .title p{
+        font-size:12px;
+    }
+
 }
 </style>
 </head>
 
 <body>
+
+<!-- HEADER -->
 
 <header>
 
@@ -169,156 +195,405 @@ header{
     </div>
 
     <a href="index.html" class="back">
-        ← بازگشت
+        ← صفحه اصلی
     </a>
 
 </header>
+
+
+<!-- CONTENT -->
 
 <div class="container">
 
     <div class="title">
 
-        <h1>نمونه‌کارهای آذین سنگ</h1>
+        <h1>
+            نمونه‌کارهای آذین سنگ
+        </h1>
 
         <p>
-            برای مشاهده مشخصات هر محصول روی آن بزنید.
+            برای مشاهده مشخصات و قیمت، محصول موردنظر را انتخاب کنید.
         </p>
 
     </div>
 
+
+    <!-- PRODUCTS -->
+
     <div class="products">
 
-        <div class="card">
-            <img src="images/arsila.jpg" alt="ارسیلا">
-            <div class="info">
-                <h2>ارسیلا</h2>
-                <div class="price">۱۵ میلیون</div>
-                <a href="product.html?name=arsila" class="btn">
-                    مشاهده
-                </a>
-            </div>
-        </div>
+
+        <!-- 1 -->
 
         <div class="card">
-            <img src="images/perslan.jpg" alt="پرسلان">
+
+            <img
+                src="arsila.jpg"
+                alt="روشویی ارسیلا">
+
             <div class="info">
-                <h2>پرسلان</h2>
-                <div class="price">۱۷ میلیون</div>
-                <a href="product.html?name=perslan" class="btn">
-                    مشاهده
+
+                <h2>
+                    ارسیلا
+                </h2>
+
+                <div class="price">
+                    ۱۵ میلیون تومان
+                </div>
+
+                <a
+                    href="product.html?name=arsila"
+                    class="btn">
+
+                    مشاهده محصول
+
                 </a>
+
             </div>
+
         </div>
 
-        <div class="card">
-            <img src="images/aryana.jpg" alt="آریانا">
-            <div class="info">
-                <h2>آریانا</h2>
-                <div class="price">۱۹ میلیون</div>
-                <a href="product.html?name=aryana" class="btn">
-                    مشاهده
-                </a>
-            </div>
-        </div>
+
+        <!-- 2 -->
 
         <div class="card">
-            <img src="images/romina.jpg" alt="رومینا">
+
+            <img
+                src="perslan.jpg"
+                alt="روشویی پرسلان">
+
             <div class="info">
-                <h2>رومینا</h2>
-                <div class="price">۲۱ میلیون</div>
-                <a href="product.html?name=romina" class="btn">
-                    مشاهده
+
+                <h2>
+                    پرسلان
+                </h2>
+
+                <div class="price">
+                    ۱۷ میلیون تومان
+                </div>
+
+                <a
+                    href="product.html?name=perslan"
+                    class="btn">
+
+                    مشاهده محصول
+
                 </a>
+
             </div>
+
         </div>
 
-        <div class="card">
-            <img src="images/atrin.jpg" alt="آترین">
-            <div class="info">
-                <h2>آترین</h2>
-                <div class="price">۲۳ میلیون</div>
-                <a href="product.html?name=atrin" class="btn">
-                    مشاهده
-                </a>
-            </div>
-        </div>
+
+        <!-- 3 -->
 
         <div class="card">
-            <img src="images/maral.jpg" alt="مارال">
+
+            <img
+                src="aryana.jpg"
+                alt="روشویی آریانا">
+
             <div class="info">
-                <h2>مارال</h2>
-                <div class="price">۲۵ میلیون</div>
-                <a href="product.html?name=maral" class="btn">
-                    مشاهده
+
+                <h2>
+                    آریانا
+                </h2>
+
+                <div class="price">
+                    ۱۹ میلیون تومان
+                </div>
+
+                <a
+                    href="product.html?name=aryana"
+                    class="btn">
+
+                    مشاهده محصول
+
                 </a>
+
             </div>
+
         </div>
 
-        <div class="card">
-            <img src="images/dalia.jpg" alt="دالیا">
-            <div class="info">
-                <h2>دالیا</h2>
-                <div class="price">۲۷ میلیون</div>
-                <a href="product.html?name=dalia" class="btn">
-                    مشاهده
-                </a>
-            </div>
-        </div>
+
+        <!-- 4 -->
 
         <div class="card">
-            <img src="images/selin.jpg" alt="سلین">
+
+            <img
+                src="romina.jpg"
+                alt="روشویی رومینا">
+
             <div class="info">
-                <h2>سلین</h2>
-                <div class="price">۲۹ میلیون</div>
-                <a href="product.html?name=selin" class="btn">
-                    مشاهده
+
+                <h2>
+                    رومینا
+                </h2>
+
+                <div class="price">
+                    ۲۱ میلیون تومان
+                </div>
+
+                <a
+                    href="product.html?name=romina"
+                    class="btn">
+
+                    مشاهده محصول
+
                 </a>
+
             </div>
+
         </div>
 
-        <div class="card">
-            <img src="images/viana.jpg" alt="ویانا">
-            <div class="info">
-                <h2>ویانا</h2>
-                <div class="price">۳۱ میلیون</div>
-                <a href="product.html?name=viana" class="btn">
-                    مشاهده
-                </a>
-            </div>
-        </div>
+
+        <!-- 5 -->
 
         <div class="card">
-            <img src="images/alma.jpg" alt="آلما">
+
+            <img
+                src="atrin.jpg"
+                alt="روشویی آترین">
+
             <div class="info">
-                <h2>آلما</h2>
-                <div class="price">۳۲ میلیون</div>
-                <a href="product.html?name=alma" class="btn">
-                    مشاهده
+
+                <h2>
+                    آترین
+                </h2>
+
+                <div class="price">
+                    ۲۳ میلیون تومان
+                </div>
+
+                <a
+                    href="product.html?name=atrin"
+                    class="btn">
+
+                    مشاهده محصول
+
                 </a>
+
             </div>
+
         </div>
 
-        <div class="card">
-            <img src="images/karina.jpg" alt="کارینا">
-            <div class="info">
-                <h2>کارینا</h2>
-                <div class="price">۳۴ میلیون</div>
-                <a href="product.html?name=karina" class="btn">
-                    مشاهده
-                </a>
-            </div>
-        </div>
+
+        <!-- 6 -->
 
         <div class="card">
-            <img src="images/nora.jpg" alt="نورا">
+
+            <img
+                src="maral.jpg"
+                alt="روشویی مارال">
+
             <div class="info">
-                <h2>نورا</h2>
-                <div class="price">۳۵ میلیون</div>
-                <a href="product.html?name=nora" class="btn">
-                    مشاهده
+
+                <h2>
+                    مارال
+                </h2>
+
+                <div class="price">
+                    ۲۵ میلیون تومان
+                </div>
+
+                <a
+                    href="product.html?name=maral"
+                    class="btn">
+
+                    مشاهده محصول
+
                 </a>
+
             </div>
+
         </div>
+
+
+        <!-- 7 -->
+
+        <div class="card">
+
+            <img
+                src="dalia.jpg"
+                alt="روشویی دالیا">
+
+            <div class="info">
+
+                <h2>
+                    دالیا
+                </h2>
+
+                <div class="price">
+                    ۲۷ میلیون تومان
+                </div>
+
+                <a
+                    href="product.html?name=dalia"
+                    class="btn">
+
+                    مشاهده محصول
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- 8 -->
+
+        <div class="card">
+
+            <img
+                src="selin.jpg"
+                alt="روشویی سلین">
+
+            <div class="info">
+
+                <h2>
+                    سلین
+                </h2>
+
+                <div class="price">
+                    ۲۹ میلیون تومان
+                </div>
+
+                <a
+                    href="product.html?name=selin"
+                    class="btn">
+
+                    مشاهده محصول
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- 9 -->
+
+        <div class="card">
+
+            <img
+                src="viana.jpg"
+                alt="روشویی ویانا">
+
+            <div class="info">
+
+                <h2>
+                    ویانا
+                </h2>
+
+                <div class="price">
+                    ۳۱ میلیون تومان
+                </div>
+
+                <a
+                    href="product.html?name=viana"
+                    class="btn">
+
+                    مشاهده محصول
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- 10 -->
+
+        <div class="card">
+
+            <img
+                src="alma.jpg"
+                alt="روشویی آلما">
+
+            <div class="info">
+
+                <h2>
+                    آلما
+                </h2>
+
+                <div class="price">
+                    ۳۲ میلیون تومان
+                </div>
+
+                <a
+                    href="product.html?name=alma"
+                    class="btn">
+
+                    مشاهده محصول
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- 11 -->
+
+        <div class="card">
+
+            <img
+                src="karina.jpg"
+                alt="روشویی کارینا">
+
+            <div class="info">
+
+                <h2>
+                    کارینا
+                </h2>
+
+                <div class="price">
+                    ۳۴ میلیون تومان
+                </div>
+
+                <a
+                    href="product.html?name=karina"
+                    class="btn">
+
+                    مشاهده محصول
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- 12 -->
+
+        <div class="card">
+
+            <img
+                src="nora.jpg"
+                alt="روشویی نورا">
+
+            <div class="info">
+
+                <h2>
+                    نورا
+                </h2>
+
+                <div class="price">
+                    ۳۵ میلیون تومان
+                </div>
+
+                <a
+                    href="product.html?name=nora"
+                    class="btn">
+
+                    مشاهده محصول
+
+                </a>
+
+            </div>
+
+        </div>
+
 
     </div>
 
