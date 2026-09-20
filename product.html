@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -536,8 +535,6 @@ footer strong{
 
         <div class="buttons">
 
-            <!-- لینک خرید با جاوااسکریپت خودکار تنظیم می‌شود -->
-
             <a
                 id="buyButton"
                 href="payment.html"
@@ -680,6 +677,68 @@ const products = {
         name:"نورا",
         price:"۳۵ میلیون تومان",
         image:"nora.jpg"
+    },
+
+    /* ================= محصولات جدید ================= */
+
+    ilia:{
+        name:"ایلیا",
+        price:"۱۶ میلیون تومان",
+        image:"ilia.jpg"
+    },
+
+    samanta:{
+        name:"سامنتا",
+        price:"۱۷ میلیون تومان",
+        image:"samanta.jpg"
+    },
+
+    "roza-kabineti":{
+        name:"روزا کابینتی",
+        price:"۲۵ میلیون تومان",
+        image:"roza-kabineti.jpg"
+    },
+
+    "geranis-pianoyi":{
+        name:"گرانیس پیانویی",
+        price:"۲۵ میلیون تومان",
+        image:"geranis-pianoyi.jpg"
+    },
+
+    sarvin:{
+        name:"سروین",
+        price:"♾",
+        image:"sarvin.jpg"
+    },
+
+    azina:{
+        name:"آذینا",
+        price:"۱۸ میلیون تومان",
+        image:"azina.jpg"
+    },
+
+    kido:{
+        name:"کیدو",
+        price:"۱۷ میلیون تومان",
+        image:"kido.jpg"
+    },
+
+    marmonite:{
+        name:"مارمونایت",
+        price:"۲۱ میلیون تومان",
+        image:"marmonite.jpg"
+    },
+
+    azarakhsh:{
+        name:"آذرخش",
+        price:"۲۱ میلیون تومان",
+        image:"azarakhsh.jpg"
+    },
+
+    ashoor:{
+        name:"آشور",
+        price:"۱۹ میلیون تومان",
+        image:"ashoor.jpg"
     }
 
 };
@@ -725,11 +784,6 @@ if(products[product]){
         products[product].name;
 
 
-    /*
-       مهم:
-       محصول انتخاب‌شده را به صفحه پرداخت می‌فرستیم
-    */
-
     document.getElementById(
         "buyButton"
     ).href =
@@ -742,4 +796,4 @@ if(products[product]){
 
 
 </body>
-</html>
+    </html>
