@@ -204,6 +204,65 @@ header{
     backdrop-filter:blur(10px);
 }
 
+
+/* ================= PRODUCTS ================= */
+.products{
+    background:#111;
+    padding:90px 6%;
+}
+.products-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+.product-card{
+    background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    overflow:hidden;
+    transition:.3s;
+}
+.product-card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(201,155,84,.5);
+}
+.product-card img{
+    width:100%;
+    height:270px;
+    object-fit:cover;
+    display:block;
+    background:#191919;
+}
+.product-info{
+    padding:20px;
+    text-align:center;
+}
+.product-info h3{
+    font-size:20px;
+    margin-bottom:10px;
+}
+.product-info p{
+    color:#aaa;
+    font-size:13px;
+    line-height:2;
+    margin-bottom:12px;
+}
+.product-price{
+    color:#d3aa67;
+    font-size:18px;
+    font-weight:bold;
+}
+@media(max-width:800px){
+    .products-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:500px){
+    .products{padding:70px 20px;}
+    .products-grid{grid-template-columns:1fr;}
+    .product-card img{height:250px;}
+}
+
 /* ================= WHY US ================= */
 
 .why{
@@ -514,7 +573,7 @@ footer p{
         <div class="buttons">
 
             <a
-                href="products.html"
+                href="#products"
                 class="btn gold">
 
                 مشاهده نمونه‌کارها
@@ -545,6 +604,109 @@ footer p{
 
 </section>
 
+
+
+<!-- ================= PRODUCTS ================= -->
+<section class="products" id="products">
+    <div class="section-title">
+        <small>محصولات جدید</small>
+        <h2>جدیدترین نمونه‌کارها</h2>
+    </div>
+
+    <div class="products-grid">
+
+        <div class="product-card">
+            <img src="ilia.jpg" alt="ایلیا">
+            <div class="product-info">
+                <h3>ایلیا</h3>
+                <p>شما می‌توانید طرح دلخواه خود را انتخاب کنید و این مدل را متناسب با سلیقه و فضای موردنظر خود سفارش دهید.</p>
+                <div class="product-price">۱۶ میلیون تومان</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="samanta.jpg" alt="سامنتا">
+            <div class="product-info">
+                <h3>سامنتا</h3>
+                <p>شما می‌توانید طرح دلخواه خود را انتخاب کنید و این مدل را متناسب با سلیقه و فضای موردنظر خود سفارش دهید.</p>
+                <div class="product-price">۱۷ میلیون تومان</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="roza-kabineti.jpg" alt="روزا کابینتی">
+            <div class="product-info">
+                <h3>روزا کابینتی</h3>
+                <p>شما می‌توانید طرح دلخواه خود را انتخاب کنید و این مدل را متناسب با سلیقه و فضای موردنظر خود سفارش دهید.</p>
+                <div class="product-price">۲۵ میلیون تومان</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="geranis-pianoyi.jpg" alt="گرانیس پیانویی">
+            <div class="product-info">
+                <h3>گرانیس پیانویی</h3>
+                <p>شما می‌توانید طرح دلخواه خود را انتخاب کنید و این مدل را متناسب با سلیقه و فضای موردنظر خود سفارش دهید.</p>
+                <div class="product-price">۲۵ میلیون تومان</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="sarvin.jpg" alt="سروین">
+            <div class="product-info">
+                <h3>سروین</h3>
+                <p>شما می‌توانید طرح دلخواه خود را انتخاب کنید و این مدل را متناسب با سلیقه و فضای موردنظر خود سفارش دهید.</p>
+                <div class="product-price">∞</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="azina.jpg" alt="آذینا">
+            <div class="product-info">
+                <h3>آذینا</h3>
+                <p>شما می‌توانید طرح دلخواه خود را انتخاب کنید و این مدل را متناسب با سلیقه و فضای موردنظر خود سفارش دهید.</p>
+                <div class="product-price">۱۸ میلیون تومان</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="kido.jpg" alt="کیدو">
+            <div class="product-info">
+                <h3>کیدو</h3>
+                <p>شما می‌توانید طرح دلخواه خود را انتخاب کنید و این مدل را متناسب با سلیقه و فضای موردنظر خود سفارش دهید.</p>
+                <div class="product-price">۱۷ میلیون تومان</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="marmonite.jpg" alt="مارمونایت">
+            <div class="product-info">
+                <h3>مارمونایت</h3>
+                <p>شما می‌توانید طرح دلخواه خود را انتخاب کنید و این مدل را متناسب با سلیقه و فضای موردنظر خود سفارش دهید.</p>
+                <div class="product-price">۲۱ میلیون تومان</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="azarkhash.jpg" alt="آذرخش">
+            <div class="product-info">
+                <h3>آذرخش</h3>
+                <p>شما می‌توانید طرح دلخواه خود را انتخاب کنید و این مدل را متناسب با سلیقه و فضای موردنظر خود سفارش دهید.</p>
+                <div class="product-price">۲۱ میلیون تومان</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="ashoor.jpg" alt="آشور">
+            <div class="product-info">
+                <h3>آشور</h3>
+                <p>شما می‌توانید طرح دلخواه خود را انتخاب کنید و این مدل را متناسب با سلیقه و فضای موردنظر خود سفارش دهید.</p>
+                <div class="product-price">۱۹ میلیون تومان</div>
+            </div>
+        </div>
+
+    </div>
+</section>
 
 <!-- ================= WHY US ================= -->
 
@@ -659,7 +821,7 @@ footer p{
     </p>
 
     <a
-        href="products.html"
+        href="#products"
         class="btn gold">
 
         دیدن نمونه‌کارها
