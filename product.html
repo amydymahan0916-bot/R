@@ -17,8 +17,12 @@
 
 body{
     font-family:Tahoma,Arial,sans-serif;
-    background:#111;
+    background:
+        radial-gradient(circle at 12% 12%,rgba(201,155,84,.10),transparent 28%),
+        radial-gradient(circle at 88% 40%,rgba(201,155,84,.06),transparent 24%),
+        linear-gradient(135deg,#111,#090909 60%,#0d0d0d);
     color:#fff;
+    overflow-x:hidden;
 }
 
 header{
@@ -37,11 +41,24 @@ header{
     backdrop-filter:blur(15px);
 
     border-bottom:1px solid rgba(255,255,255,.08);
+    box-shadow:0 8px 30px rgba(0,0,0,.22);
+}
+
+header::after{
+    content:"";
+    position:absolute;
+    right:6%;
+    left:6%;
+    bottom:-1px;
+    height:1px;
+    background:linear-gradient(90deg,transparent,#c99b54,transparent);
+    opacity:.55;
 }
 
 .logo{
     font-size:24px;
     font-weight:bold;
+    text-shadow:0 0 24px rgba(201,155,84,.14);
 }
 
 .logo span{
@@ -66,47 +83,127 @@ header{
 
     margin:auto;
 
-    padding:55px 25px 80px;
+    padding:65px 25px 90px;
 }
 
 .product{
-
     display:grid;
-
-    grid-template-columns:
-        1.1fr .9fr;
-
+    grid-template-columns:1.1fr .9fr;
     gap:45px;
-
     align-items:center;
-
+    animation:pageIn .8s ease both;
 }
 
 .image-box{
-
     position:relative;
-
     background:#1b1b1b;
-
     border-radius:25px;
-
     overflow:hidden;
-
     border:1px solid rgba(255,255,255,.08);
-
     box-shadow:0 25px 70px rgba(0,0,0,.45);
+    isolation:isolate;
+}
 
+.image-box::before{
+    content:"";
+    position:absolute;
+    inset:5px;
+    z-index:5;
+    border-radius:21px;
+    padding:2px;
+    background:conic-gradient(
+        from 0deg,
+        transparent 0deg 250deg,
+        rgba(201,155,84,.15) 265deg,
+        #d8ad68 286deg,
+        #fff1c7 300deg,
+        #d8ad68 315deg,
+        transparent 340deg
+    );
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+    animation:snakeAround 4s linear infinite;
+    pointer-events:none;
+}
+
+.image-stage{
+    position:relative;
+    overflow:hidden;
 }
 
 .image-box img{
-
     width:100%;
     height:570px;
-
     object-fit:cover;
-
     display:block;
+    transition:transform .7s ease,filter .5s ease;
+}
 
+.image-box:hover img{
+    transform:scale(1.025);
+    filter:brightness(1.06);
+}
+
+.detail-snake-head{
+    position:absolute;
+    z-index:6;
+    width:15px;
+    height:15px;
+    right:13px;
+    top:13px;
+    border-radius:50% 65% 50% 65%;
+    background:linear-gradient(135deg,#fff1c7,#c99b54 60%,#8c622d);
+    box-shadow:0 0 15px rgba(225,190,110,.8);
+    transform:rotate(35deg);
+    animation:detailSnakeHead 4s linear infinite;
+    pointer-events:none;
+}
+
+.detail-snake-head::after{
+    content:"";
+    position:absolute;
+    width:3px;
+    height:3px;
+    border-radius:50%;
+    background:#17110a;
+    top:3px;
+    right:3px;
+}
+
+.gallery-thumbs{
+    display:flex;
+    gap:8px;
+    padding:10px;
+    overflow-x:auto;
+    background:rgba(0,0,0,.28);
+    scrollbar-width:thin;
+}
+
+.gallery-thumb{
+    flex:0 0 68px;
+    height:55px;
+    padding:0;
+    border-radius:9px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.10);
+    background:#151515;
+    cursor:pointer;
+    opacity:.72;
+    transition:.25s;
+}
+
+.gallery-thumb.active,
+.gallery-thumb:hover{
+    opacity:1;
+    border-color:#c99b54;
+    box-shadow:0 0 14px rgba(201,155,84,.18);
+}
+
+.gallery-thumb img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover;
 }
 
 .badge{
@@ -134,6 +231,7 @@ header{
 
 .details{
     padding:15px 5px;
+    animation:detailsIn .9s .08s ease both;
 }
 
 .small{
@@ -157,7 +255,6 @@ header{
 }
 
 .price{
-
     font-size:28px;
 
     font-weight:bold;
@@ -168,8 +265,20 @@ header{
 
 }
 
-.text{
+.product-code{
+    display:inline-flex;
+    align-items:center;
+    padding:7px 11px;
+    margin:-8px 0 20px;
+    border-radius:20px;
+    color:#9b9b9b;
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.07);
+    font-size:10px;
+    letter-spacing:.4px;
+}
 
+.text{
     color:#aaa;
 
     line-height:2.2;
@@ -351,6 +460,11 @@ footer strong{
         height:430px;
     }
 
+    .gallery-thumb{
+        flex-basis:62px;
+        height:50px;
+    }
+
     .details h1{
         font-size:35px;
     }
@@ -385,6 +499,19 @@ footer strong{
         height:330px;
     }
 
+    .gallery-thumbs{
+        padding:8px;
+    }
+
+    .gallery-thumb{
+        flex-basis:58px;
+        height:46px;
+    }
+
+    .product-code{
+        font-size:9px;
+    }
+
     .details h1{
         font-size:30px;
     }
@@ -397,6 +524,36 @@ footer strong{
         font-size:12px;
     }
 
+}
+
+@keyframes snakeAround{
+    to{transform:rotate(360deg);}
+}
+
+@keyframes detailSnakeHead{
+    0%{transform:translate(0,0) rotate(35deg);}
+    25%{transform:translate(-8px,530px) rotate(95deg);}
+    50%{transform:translate(-100%,530px) rotate(155deg);}
+    75%{transform:translate(-100%,0) rotate(215deg);}
+    100%{transform:translate(0,0) rotate(395deg);}
+}
+
+@keyframes pageIn{
+    from{opacity:0;transform:translateY(18px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes detailsIn{
+    from{opacity:0;transform:translateX(20px);}
+    to{opacity:1;transform:translateX(0);}
+}
+
+@media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{
+        animation-duration:.001ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+    }
 }
 
 </style>
@@ -431,14 +588,22 @@ footer strong{
 
     <div class="image-box">
 
-        <img
-            id="productImage"
-            src="arsila.jpg"
-            alt="روشویی">
+        <div class="image-stage">
 
-        <div class="badge">
-            دست‌ساز و سفارشی
+            <img
+                id="productImage"
+                src="arsila.jpg"
+                alt="روشویی">
+
+            <div class="badge">
+                دست‌ساز و سفارشی
+            </div>
+
+            <span class="detail-snake-head" aria-hidden="true"></span>
+
         </div>
+
+        <div class="gallery-thumbs" id="galleryThumbs" aria-label="تصاویر محصول"></div>
 
     </div>
 
@@ -462,6 +627,10 @@ footer strong{
 
             ۱۵ میلیون تومان
 
+        </div>
+
+        <div class="product-code" id="productCode">
+            کد محصول: AZ-001
         </div>
 
 
@@ -610,72 +779,84 @@ const products = {
     arsila:{
         name:"ارسیلا",
         price:"۱۵ میلیون تومان",
+        code:"AZ-001",
         image:"arsila.jpg"
     },
 
     perslan:{
         name:"پرسلان",
         price:"۱۷ میلیون تومان",
+        code:"AZ-002",
         image:"perslan.jpg"
     },
 
     aryana:{
         name:"آریانا",
         price:"۱۹ میلیون تومان",
+        code:"AZ-003",
         image:"aryana.jpg"
     },
 
     romina:{
         name:"رومینا",
         price:"۲۱ میلیون تومان",
+        code:"AZ-004",
         image:"romina.jpg"
     },
 
     atrin:{
         name:"آترین",
         price:"۲۳ میلیون تومان",
+        code:"AZ-005",
         image:"atrin.jpg"
     },
 
     maral:{
         name:"مارال",
         price:"۲۵ میلیون تومان",
+        code:"AZ-006",
         image:"maral.jpg"
     },
 
     dalia:{
         name:"دالیا",
         price:"۲۷ میلیون تومان",
+        code:"AZ-007",
         image:"dalia.jpg"
     },
 
     selin:{
         name:"سلین",
         price:"۲۹ میلیون تومان",
+        code:"AZ-008",
         image:"selin.jpg"
     },
 
     viana:{
         name:"ویانا",
         price:"۳۱ میلیون تومان",
+        code:"AZ-009",
         image:"viana.jpg"
     },
 
     alma:{
         name:"آلما",
         price:"۳۲ میلیون تومان",
+        code:"AZ-010",
         image:"alma.jpg"
     },
 
     karina:{
         name:"کارینا",
         price:"۳۴ میلیون تومان",
+        code:"AZ-011",
         image:"karina.jpg"
     },
 
     nora:{
         name:"نورا",
         price:"۳۵ میلیون تومان",
+        code:"AZ-012",
         image:"nora.jpg"
     },
 
@@ -684,60 +865,70 @@ const products = {
     ilia:{
         name:"ایلیا",
         price:"۱۶ میلیون تومان",
+        code:"AZ-013",
         image:"ilia.jpg"
     },
 
     samanta:{
         name:"سامنتا",
         price:"۱۷ میلیون تومان",
+        code:"AZ-014",
         image:"samanta.jpg"
     },
 
     "roza-kabineti":{
         name:"روزا کابینتی",
         price:"۲۵ میلیون تومان",
+        code:"AZ-015",
         image:"roza-kabineti.jpg"
     },
 
     "geranis-pianoyi":{
         name:"گرانیس پیانویی",
         price:"۲۵ میلیون تومان",
+        code:"AZ-016",
         image:"geranis-pianoyi.jpg"
     },
 
     sarvin:{
         name:"سروین",
         price:"♾",
+        code:"AZ-017",
         image:"sarvin.jpg"
     },
 
     azina:{
         name:"آذینا",
         price:"۱۸ میلیون تومان",
+        code:"AZ-018",
         image:"azina.jpg"
     },
 
     kido:{
         name:"کیدو",
         price:"۱۷ میلیون تومان",
+        code:"AZ-019",
         image:"kido.jpg"
     },
 
     marmonite:{
         name:"مارمونایت",
         price:"۲۱ میلیون تومان",
+        code:"AZ-020",
         image:"marmonite.jpg"
     },
 
     azarakhsh:{
         name:"آذرخش",
         price:"۲۱ میلیون تومان",
+        code:"AZ-021",
         image:"azarakhsh.jpg"
     },
 
     ashoor:{
         name:"آشور",
         price:"۱۹ میلیون تومان",
+        code:"AZ-022",
         image:"ashoor.jpg"
     }
 
@@ -759,41 +950,76 @@ const product =
 
 if(products[product]){
 
-    document.getElementById(
-        "productName"
-    ).textContent =
-        products[product].name;
+    const selected = products[product];
 
+    document.getElementById("productName").textContent = selected.name;
 
-    document.getElementById(
-        "productPrice"
-    ).textContent =
-        products[product].price;
+    document.getElementById("productPrice").textContent = selected.price;
 
+    document.getElementById("productCode").textContent =
+        "کد محصول: " + selected.code;
 
-    document.getElementById(
-        "productImage"
-    ).src =
-        products[product].image;
+    document.getElementById("productImage").src = selected.image;
 
+    document.getElementById("productImage").alt =
+        "روشویی " + selected.name;
 
-    document.getElementById(
-        "productImage"
-    ).alt =
-        "روشویی " +
-        products[product].name;
+    document.getElementById("buyButton").href =
+        "payment.html?name=" + encodeURIComponent(product);
 
+    /*
+       گالری آماده است:
+       اگر در آینده تصاویر name-2.jpg ، name-3.jpg و ... کنار فایل‌ها
+       قرار بگیرند، به‌صورت خودکار وارد گالری می‌شوند.
+    */
+    const gallery = [selected.image];
 
-    document.getElementById(
-        "buyButton"
-    ).href =
-        "payment.html?name=" +
-        encodeURIComponent(product);
+    for(let i = 2; i <= 5; i++){
+        const extra = selected.image.replace(/\.jpg$/i, "-" + i + ".jpg");
+        gallery.push(extra);
+    }
 
+    const thumbs = document.getElementById("galleryThumbs");
+    const mainImage = document.getElementById("productImage");
+
+    thumbs.innerHTML = "";
+
+    gallery.forEach(function(src, index){
+
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "gallery-thumb" + (index === 0 ? " active" : "");
+        button.setAttribute("aria-label", "تصویر " + (index + 1));
+
+        const thumb = document.createElement("img");
+        thumb.src = src;
+        thumb.alt = selected.name;
+
+        thumb.onerror = function(){
+            button.remove();
+        };
+
+        button.appendChild(thumb);
+
+        button.addEventListener("click", function(){
+            mainImage.src = src;
+
+            document.querySelectorAll(".gallery-thumb").forEach(function(item){
+                item.classList.remove("active");
+            });
+
+            button.classList.add("active");
+        });
+
+        thumbs.appendChild(button);
+    });
+
+}else{
+    window.location.href = "products.html";
 }
 
 </script>
 
 
 </body>
-    </html>
+                </html>
