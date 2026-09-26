@@ -22,7 +22,10 @@ html{
 
 body{
     font-family:Tahoma,Arial,sans-serif;
-    background:#0d0d0d;
+    background:
+        radial-gradient(circle at 12% 8%, rgba(205,164,97,.10), transparent 25%),
+        radial-gradient(circle at 88% 30%, rgba(205,164,97,.06), transparent 22%),
+        linear-gradient(135deg,#111,#090909 58%,#0d0d0d);
     color:#fff;
     overflow-x:hidden;
 }
@@ -34,7 +37,7 @@ header{
     top:0;
     z-index:1000;
 
-    height:72px;
+    height:74px;
 
     padding:0 5%;
 
@@ -46,11 +49,24 @@ header{
     backdrop-filter:blur(18px);
 
     border-bottom:1px solid rgba(255,255,255,.08);
+    box-shadow:0 8px 30px rgba(0,0,0,.20);
+}
+
+header::after{
+    content:"";
+    position:absolute;
+    right:5%;
+    left:5%;
+    bottom:-1px;
+    height:1px;
+    background:linear-gradient(90deg,transparent,#cda461,transparent);
+    opacity:.55;
 }
 
 .logo{
     font-size:23px;
     font-weight:bold;
+    text-shadow:0 0 22px rgba(205,164,97,.14);
 }
 
 .logo span{
@@ -237,6 +253,7 @@ header{
     overflow:hidden;
 
     position:relative;
+    isolation:isolate;
 
     transition:
         transform .35s,
@@ -263,17 +280,65 @@ header{
 /* ================= IMAGE ================= */
 
 .image-link{
-
     display:block;
-
     position:relative;
-
     overflow:hidden;
-
     height:330px;
-
     background:#202020;
+    isolation:isolate;
+}
 
+.image-link::before{
+    content:"";
+    position:absolute;
+    inset:5px;
+    z-index:4;
+    border-radius:17px;
+    padding:2px;
+    background:conic-gradient(
+        from 0deg,
+        transparent 0deg 255deg,
+        rgba(205,164,97,.15) 270deg,
+        #d8ad68 292deg,
+        #fff1c7 305deg,
+        #d8ad68 318deg,
+        rgba(205,164,97,.12) 338deg,
+        transparent 355deg
+    );
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+    animation:snakeAround 3.8s linear infinite;
+    opacity:.92;
+    pointer-events:none;
+}
+
+.snake-head{
+    position:absolute;
+    z-index:5;
+    width:13px;
+    height:13px;
+    right:10px;
+    top:10px;
+    border-radius:50% 65% 50% 65%;
+    background:linear-gradient(135deg,#fff1c7,#c99b54 60%,#8c622d);
+    box-shadow:0 0 12px rgba(225,190,110,.75);
+    transform:rotate(35deg);
+    animation:snakeHead 3.8s linear infinite;
+    pointer-events:none;
+}
+
+.snake-head::after{
+    content:"";
+    position:absolute;
+    width:3px;
+    height:3px;
+    border-radius:50%;
+    background:#17110a;
+    top:3px;
+    right:3px;
 }
 
 .image-link img{
@@ -505,6 +570,18 @@ footer strong{
 
 /* ================= ANIMATION ================= */
 
+@keyframes snakeAround{
+    to{ transform:rotate(360deg); }
+}
+
+@keyframes snakeHead{
+    0%{ transform:translate(0,0) rotate(35deg); }
+    25%{ transform:translate(-6px,300px) rotate(95deg); }
+    50%{ transform:translate(-100%,300px) rotate(155deg); }
+    75%{ transform:translate(-100%,0) rotate(215deg); }
+    100%{ transform:translate(0,0) rotate(395deg); }
+}
+
 @keyframes cardIn{
 
     from{
@@ -660,18 +737,12 @@ footer strong{
     }
 
     .products{
-
-        grid-template-columns:
-            repeat(3,1fr);
-
-        gap:6px;
-
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
     }
 
     .image-link{
-
-        height:135px;
-
+        height:190px;
     }
 
     .badge{
@@ -709,39 +780,32 @@ footer strong{
     }
 
     .name{
-
-        font-size:10px;
-
-        margin-bottom:4px;
-
+        font-size:12px;
+        margin-bottom:5px;
     }
 
     .price{
-
-        font-size:7px;
-
+        font-size:8px;
     }
 
     .description{
-
-        font-size:6.5px;
-
-        line-height:1.7;
-
-        min-height:22px;
-
-        margin-bottom:6px;
-
+        font-size:7.5px;
+        line-height:1.8;
+        min-height:28px;
+        margin-bottom:7px;
     }
 
     .details{
+        font-size:8px;
+        padding:8px 3px;
+        border-radius:8px;
+    }
 
-        font-size:6.5px;
-
-        padding:7px 2px;
-
-        border-radius:6px;
-
+    .snake-head{
+        width:10px;
+        height:10px;
+        right:7px;
+        top:7px;
     }
 
 }
@@ -751,9 +815,7 @@ footer strong{
 @media(max-width:350px){
 
     .image-link{
-
-        height:115px;
-
+        height:145px;
     }
 
     .name{
@@ -768,6 +830,14 @@ footer strong{
 
     }
 
+}
+
+@media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{
+        animation-duration:.001ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+    }
 }
 
 </style>
@@ -869,6 +939,8 @@ footer strong{
             src="ilia.jpg"
             alt="روشویی ایلیا">
 
+        <span class="snake-head" aria-hidden="true"></span>
+
         <div class="badge">
             جدید
         </div>
@@ -924,6 +996,8 @@ footer strong{
         <img
             src="samanta.jpg"
             alt="روشویی سامنتا">
+
+        <span class="snake-head" aria-hidden="true"></span>
 
         <div class="badge">
             جدید
@@ -981,6 +1055,8 @@ footer strong{
             src="roza-kabineti.jpg"
             alt="روشویی روزا کابینتی">
 
+        <span class="snake-head" aria-hidden="true"></span>
+
         <div class="badge">
             جدید
         </div>
@@ -1036,6 +1112,8 @@ footer strong{
         <img
             src="geranis-pianoyi.jpg"
             alt="روشویی گرانیس پیانویی">
+
+        <span class="snake-head" aria-hidden="true"></span>
 
         <div class="badge">
             جدید
@@ -1093,6 +1171,8 @@ footer strong{
             src="sarvin.jpg"
             alt="روشویی سروین">
 
+        <span class="snake-head" aria-hidden="true"></span>
+
         <div class="badge">
             جدید
         </div>
@@ -1148,6 +1228,8 @@ footer strong{
         <img
             src="azina.jpg"
             alt="روشویی آذینا">
+
+        <span class="snake-head" aria-hidden="true"></span>
 
         <div class="badge">
             جدید
@@ -1205,6 +1287,8 @@ footer strong{
             src="kido.jpg"
             alt="روشویی کیدو">
 
+        <span class="snake-head" aria-hidden="true"></span>
+
         <div class="badge">
             جدید
         </div>
@@ -1260,6 +1344,8 @@ footer strong{
         <img
             src="marmonite.jpg"
             alt="روشویی مارمونایت">
+
+        <span class="snake-head" aria-hidden="true"></span>
 
         <div class="badge">
             جدید
@@ -1317,6 +1403,8 @@ footer strong{
             src="azarakhsh.jpg"
             alt="روشویی آذرخش">
 
+        <span class="snake-head" aria-hidden="true"></span>
+
         <div class="badge">
             جدید
         </div>
@@ -1372,6 +1460,8 @@ footer strong{
         <img
             src="ashoor.jpg"
             alt="روشویی آشور">
+
+        <span class="snake-head" aria-hidden="true"></span>
 
         <div class="badge">
             جدید
@@ -1430,6 +1520,8 @@ footer strong{
             src="arsila.jpg"
             alt="روشویی ارسیلا">
 
+        <span class="snake-head" aria-hidden="true"></span>
+
         <div class="badge">
             دست‌ساز
         </div>
@@ -1450,7 +1542,7 @@ footer strong{
             </div>
 
             <div class="price">
-              ۱۷ میلیون
+                ۱۵ میلیون
             </div>
 
         </div>
@@ -1486,6 +1578,8 @@ footer strong{
         <img
             src="perslan.jpg"
             alt="روشویی پرسلان">
+
+        <span class="snake-head" aria-hidden="true"></span>
 
         <div class="badge">
             دست‌ساز
@@ -1544,6 +1638,8 @@ footer strong{
             src="aryana.jpg"
             alt="روشویی آریانا">
 
+        <span class="snake-head" aria-hidden="true"></span>
+
         <div class="badge">
             دست‌ساز
         </div>
@@ -1601,6 +1697,8 @@ footer strong{
             src="romina.jpg"
             alt="روشویی رومینا">
 
+        <span class="snake-head" aria-hidden="true"></span>
+
         <div class="badge">
             دست‌ساز
         </div>
@@ -1621,7 +1719,7 @@ footer strong{
             </div>
 
             <div class="price">
-                ۱۷ میلیون
+                ۲۱ میلیون
             </div>
 
         </div>
@@ -1657,6 +1755,8 @@ footer strong{
         <img
             src="atrin.jpg"
             alt="روشویی آترین">
+
+        <span class="snake-head" aria-hidden="true"></span>
 
         <div class="badge">
             دست‌ساز
@@ -1715,6 +1815,8 @@ footer strong{
             src="maral.jpg"
             alt="روشویی مارال">
 
+        <span class="snake-head" aria-hidden="true"></span>
+
         <div class="badge">
             دست‌ساز
         </div>
@@ -1735,7 +1837,7 @@ footer strong{
             </div>
 
             <div class="price">
-                ۱۹ میلیون
+                ۲۵ میلیون
             </div>
 
         </div>
@@ -1772,6 +1874,8 @@ footer strong{
             src="dalia.jpg"
             alt="روشویی دالیا">
 
+        <span class="snake-head" aria-hidden="true"></span>
+
         <div class="badge">
             دست‌ساز
         </div>
@@ -1792,7 +1896,7 @@ footer strong{
             </div>
 
             <div class="price">
-                ۱۶ میلیون
+                ۲۷ میلیون
             </div>
 
         </div>
@@ -1829,6 +1933,8 @@ footer strong{
             src="selin.jpg"
             alt="روشویی سلین">
 
+        <span class="snake-head" aria-hidden="true"></span>
+
         <div class="badge">
             دست‌ساز
         </div>
@@ -1849,7 +1955,7 @@ footer strong{
             </div>
 
             <div class="price">
-                ۱۹ میلیون
+                ۲۹ میلیون
             </div>
 
         </div>
@@ -1886,6 +1992,8 @@ footer strong{
             src="viana.jpg"
             alt="روشویی ویانا">
 
+        <span class="snake-head" aria-hidden="true"></span>
+
         <div class="badge">
             دست‌ساز
         </div>
@@ -1906,7 +2014,7 @@ footer strong{
             </div>
 
             <div class="price">
-                ۱۸ میلیون
+                ۳۱ میلیون
             </div>
 
         </div>
@@ -1943,6 +2051,8 @@ footer strong{
             src="alma.jpg"
             alt="روشویی آلما">
 
+        <span class="snake-head" aria-hidden="true"></span>
+
         <div class="badge">
             دست‌ساز
         </div>
@@ -1963,7 +2073,7 @@ footer strong{
             </div>
 
             <div class="price">
-                ۱۷ میلیون
+                ۳۲ میلیون
             </div>
 
         </div>
@@ -1999,6 +2109,8 @@ footer strong{
         <img
             src="karina.jpg"
             alt="روشویی کارینا">
+
+        <span class="snake-head" aria-hidden="true"></span>
 
         <div class="badge">
             دست‌ساز
@@ -2057,6 +2169,8 @@ footer strong{
             src="nora.jpg"
             alt="روشویی نورا">
 
+        <span class="snake-head" aria-hidden="true"></span>
+
         <div class="badge">
             دست‌ساز
         </div>
@@ -2077,7 +2191,7 @@ footer strong{
             </div>
 
             <div class="price">
-                ۱۷ میلیون
+                ۳۵ میلیون
             </div>
 
         </div>
